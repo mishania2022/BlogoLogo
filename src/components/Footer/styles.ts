@@ -1,5 +1,5 @@
 import styled from "styled-components";
-//import { Color } from "../../ui";
+import { Color } from "../../ui/colors";
 
 const StyledFooter = styled.div`
   display: flex;
@@ -8,17 +8,17 @@ const StyledFooter = styled.div`
 ` ;
 
 const ExpDate = styled.h3`
-  color: black;
+  color: ${Color.Medium};
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
 ` ;
 
-const FooterToggle = styled.h3`
-  color: white;
+const ToggleTheme = styled.h3`
+  color: ${Color.Secondary};
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
 ` ;
 
-export { StyledFooter, FooterToggle, ExpDate };
+export { StyledFooter, ToggleTheme, ExpDate };

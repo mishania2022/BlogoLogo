@@ -1,11 +1,11 @@
 import React from 'react'
-import { ExpDate, FooterToggle, StyledFooter } from './styles'
+import { ExpDate, ToggleTheme, StyledFooter } from './styles'
 
 export const Footer = () => {
   return (
     <div><StyledFooter>
     <ExpDate>©2022 Blogolog</ExpDate>
-    <FooterToggle>Dark theme</FooterToggle>
+    <ToggleTheme>Dark theme</ToggleTheme>
   </StyledFooter></div>
   )
 }
