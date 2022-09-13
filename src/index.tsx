@@ -1,7 +1,10 @@
 import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { App } from './App';
+import { store } from './store/store';
 import { GlobalStyles } from './ui/GlobalStyles';
+import { resetCSS } from './ui/reset';
 
 
 const root = ReactDOM.createRoot(
@@ -10,7 +13,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <BrowserRouter>
     <GlobalStyles />
-    <App />
+    <Provider store={store} ><App /></Provider>
   </BrowserRouter>
 );
 
