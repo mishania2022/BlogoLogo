@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import {ReactComponent as Search}  from "../../assets/icons/search.svg";
-import { ROUTE } from "../../routes/routes";
+import { ROUTE } from "../../routes";
 import { StyledSearch } from "./styles";
 export const SearchIcon = () => {
   return (

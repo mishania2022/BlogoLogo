@@ -81,8 +81,8 @@ export const resetCSS = css`
   [type="button"],
   [type="reset"],
   [type="submit"] {
-    -webkit-appearance: button;
-    padding: 1px 6px;
+    /* -webkit-appearance: button;
+    padding: 1px 6px; */
   }
 
   input {

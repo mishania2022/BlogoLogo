@@ -1,12 +1,14 @@
-import { SearchIcon } from "../SearchIcon/SearchIcon"
-import { SignInStack } from "../SignInStack/SignInStack"
+import { SearchIcon } from "../"
+import { SignIn } from "../"
+import { SignUp } from "../"
 import { StyledNavbarList } from "./styles"
 
 export const NavbarList = () => {
   return (
     <StyledNavbarList>
       <SearchIcon/>
-      <SignInStack/>
+      <SignIn/>
+      <SignUp/>
     </StyledNavbarList>
   )
 }

@@ -1,5 +1,5 @@
 import { LogoIcon } from '../LogoIcon/LogoIcon'
-import { NavbarList } from '../NavbarList/NavbarList'
+import { NavbarList } from '../'
 import { StyledNavbar } from './styles'
 
 export const Navbar = () => {

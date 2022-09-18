@@ -16,6 +16,7 @@
     "@types/react-select": "^5.0.1",
     "@types/uuid": "^8.3.4",
     "axios": "^0.27.2",
+    "firebase": "^9.9.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.34.2",
@@ -33,14 +34,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "lint": "eslint -c .eslintrc --ext .ts,.tsx ."
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
+ 
   "browserslist": {
     "production": [
       ">0.2%",

@@ -4,7 +4,7 @@ import { articleAPI } from "../../../services/articleAPI";
 import { IArticle } from "../../../types";
 
 interface ArticlesState {
-  articles: any[];
+  articles: IArticle[];
   isLoading: boolean;
   error: null | string;
 }

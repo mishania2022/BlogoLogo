@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ClockLoader } from "react-spinners";
 
 const StyledArticlesList = styled.ul`
   display: grid;
@@ -6,6 +7,11 @@ const StyledArticlesList = styled.ul`
   grid-template-rows: repeat(3, 4fr);
   grid-gap: 40px 32px;
   list-style: none;
-` ;
+`;
 
-export { StyledArticlesList };
+const StyledClockLoader = styled(ClockLoader)`
+  margin: 0 auto;
+  margin-top: 300px;
+`;
+
+export { StyledArticlesList, StyledClockLoader };
