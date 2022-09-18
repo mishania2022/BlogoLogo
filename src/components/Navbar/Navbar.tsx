@@ -1,6 +1,6 @@
-import { LogoIcon } from '../LogoIcon/LogoIcon'
-import { NavbarList } from '../'
-import { StyledNavbar } from './styles'
+import { LogoIcon } from "../LogoIcon/LogoIcon";
+import { NavbarList } from "../";
+import { StyledNavbar } from "./styles";
 
 export const Navbar = () => {
   return (
@@ -8,5 +8,5 @@ export const Navbar = () => {
       <LogoIcon />
       <NavbarList />
     </StyledNavbar>
-  )
-}
+  );
+};

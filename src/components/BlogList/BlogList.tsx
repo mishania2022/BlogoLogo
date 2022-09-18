@@ -31,7 +31,11 @@ export const BlogList = () => {
   return (
     <StyledBlogList>
       {blogs.map(({ title, imageUrl, publishedAt, id }: InputValues) => {
-        return <Link to={`/blogs/${id}`}><Blog imageUrl={imageUrl} title={title} publishedAt={publishedAt} /></Link>;
+        return (
+          <Link to={`/blogs/${id}`}>
+            <Blog imageUrl={imageUrl} title={title} publishedAt={publishedAt} />
+          </Link>
+        );
       })}
     </StyledBlogList>
   );

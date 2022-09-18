@@ -26,7 +26,11 @@ export const ArticlesList = () => {
   return (
     <StyledArticlesList>
       {articles.map(({ title, imageUrl, publishedAt, id }: InputValues) => {
-        return <Link to={`/articles/${id}`}><Article title={title} imageUrl={imageUrl} publishedAt={publishedAt} /></Link>;
+        return (
+          <Link to={`/articles/${id}`}>
+            <Article title={title} imageUrl={imageUrl} publishedAt={publishedAt} />
+          </Link>
+        );
       })}
     </StyledArticlesList>
   );
