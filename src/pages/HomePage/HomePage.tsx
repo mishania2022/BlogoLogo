@@ -5,7 +5,6 @@ import { TabbarHomePage } from "../../components/TabbarHomePage/TabbarHomePage";
 import { Title } from "./styles";
 
 export const HomePage = () => {
-
   const [tab, setTab] = useState("articles");
 
   return (
@@ -15,4 +14,4 @@ export const HomePage = () => {
       {tab === "articles" ? <ArticlesList /> : <BlogList />}
     </div>
   );
-}
+};

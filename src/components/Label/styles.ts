@@ -7,4 +7,4 @@ const Input = styled.input`
   border: 1px solid ${Color.Gray};
 `;
 
-export {Input}
+export { Input };

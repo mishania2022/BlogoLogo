@@ -2,8 +2,8 @@ import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./features/User/userSlice";
 import articlesReducer from "./features/Articles/articlesSlice";
 import blogsReducer from "./features/Blogs/blogsSlice";
-import articleDetailsReducer from "./features/Articles/articlesDetailsSlice"
-import blogDetailsReducer from "./features/Blogs/blogsDetailsSlice"
+import articleDetailsReducer from "./features/Articles/articlesDetailsSlice";
+import blogDetailsReducer from "./features/Blogs/blogsDetailsSlice";
 
 const store = configureStore({
   reducer: {

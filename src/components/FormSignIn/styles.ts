@@ -20,6 +20,6 @@ const Input = styled.input`
   border: 1px solid ${Color.Gray};
 `;
 const LinkSignIn = styled.p`
-  color:${Color.Primary};
-`
+  color: ${Color.Primary};
+`;
 export { Form, Button, Input, LinkSignIn };

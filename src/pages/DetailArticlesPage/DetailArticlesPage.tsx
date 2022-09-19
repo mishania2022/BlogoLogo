@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
 import { fetchArticleByDetails } from "../../store/features/Articles/articlesDetailsSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { getDetailsArticles } from "../../store/selectors/articleDetailsSelectors";
@@ -10,12 +10,7 @@ export const DetailArticlesPage = () => {
   const { id = "" } = useParams();
   const dispatch = useAppDispatch();
   const { isLoading, error, details } = useAppSelector(getDetailsArticles);
-  const {
-    title,
-    newsSite,
-    imageUrl,
-    summary,
-  } = details || ({} as IArticle);
+  const { title, newsSite, imageUrl, summary } = details || ({} as IArticle);
 
   useEffect(() => {
     dispatch(fetchArticleByDetails(id));
@@ -37,4 +32,4 @@ export const DetailArticlesPage = () => {
       <h2>Description: {summary}</h2>
     </StyledDetailArticlesPage>
   );
-}
+};

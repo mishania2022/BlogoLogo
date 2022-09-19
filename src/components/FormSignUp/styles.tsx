@@ -16,18 +16,17 @@ const Button = styled.button`
   padding: 16px 0;
 `;
 
-
 const Danger = styled.p`
-  color:${Color.Error}
-`
+  color: ${Color.Error};
+`;
 const ExtraDanger = styled.p`
-  color:${Color.Error};
-  font-weight:bold;
-`
+  color: ${Color.Error};
+  font-weight: bold;
+`;
 const StyledRingLoader = styled(RingLoader)`
-  margin:0 auto;  
-`
+  margin: 0 auto;
+`;
 const LinkSignIn = styled.p`
-  color:${Color.Primary};
-`
+  color: ${Color.Primary};
+`;
 export { Form, Button, Danger, ExtraDanger, StyledRingLoader, LinkSignIn };

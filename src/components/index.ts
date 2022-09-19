@@ -9,7 +9,7 @@ import { FormSignUp } from "./FormSignUp/FormSignUp";
 import { SearchIcon } from "./SearchIcon/SearchIcon";
 import { SignIn } from "./SignIn/SignIn";
 import { SignUp } from "./SignUp/SignUp";
-import { NavbarList} from "./NavbarList/NavbarList"
+import { NavbarList } from "./NavbarList/NavbarList";
 
 export {
   Footer,

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
 import { fetchBlogByDetails } from "../../store/features/Blogs/blogsDetailsSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { getDetailsBlogs } from "../../store/selectors/blogDetailsSelector";
@@ -10,12 +10,7 @@ export const DetailsBlogPage = () => {
   const { id = "" } = useParams();
   const dispatch = useAppDispatch();
   const { isLoading, error, details } = useAppSelector(getDetailsBlogs);
-  const {
-    title,
-    newsSite,
-    imageUrl,
-    summary,
-  } = details || ({} as IBlog);
+  const { title, newsSite, imageUrl, summary } = details || ({} as IBlog);
 
   useEffect(() => {
     dispatch(fetchBlogByDetails(id));
@@ -37,4 +32,4 @@ export const DetailsBlogPage = () => {
       <h2>Description: {summary}</h2>
     </StyledDetailBlogsPage>
   );
-}
+};
