@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { blogAPI } from "../../../services/blogAPI";
+import { spaceFlyAPI } from "../../../services";
 import { IBlog } from "../../../types/index";
 
 interface BlogsState {
@@ -17,7 +17,7 @@ const initialState: BlogsState = {
 const fetchBlogs = createAsyncThunk<IBlog[], undefined, { rejectValue: string }>(
   "blogs/fetchBlogs",
   async () => {
-    return await blogAPI.getAllBlogs();
+    return await spaceFlyAPI.getAllBlogs();
   },
 );
 

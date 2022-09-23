@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
-import { articleAPI } from "../../../services/articleAPI";
+import { spaceFlyAPI } from "../../../services";
 import { IArticle } from "../../../types";
 
 interface ArticlesState {
@@ -15,18 +15,17 @@ const initialState: ArticlesState = {
   error: null,
 };
 
-const fetchArticles = createAsyncThunk<
-  IArticle[],
-  undefined,
-  { rejectValue: string }
->("articles/fetchArticles", async (_, { rejectWithValue }) => {
-  try {
-    return await articleAPI.getAllArticles();
-  } catch (error) {
-    const AxiosError = error as AxiosError;
-    return rejectWithValue(AxiosError.message);
-  }
-});
+const fetchArticles = createAsyncThunk<IArticle[], undefined, { rejectValue: string }>(
+  "articles/fetchArticles",
+  async (_, { rejectWithValue }) => {
+    try {
+      return await spaceFlyAPI.getAllArticles();
+    } catch (error) {
+      const AxiosError = error as AxiosError;
+      return rejectWithValue(AxiosError.message);
+    }
+  },
+);
 
 const articlesSlice = createSlice({
   name: "articles",

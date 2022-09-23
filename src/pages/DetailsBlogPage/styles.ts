@@ -1,14 +1,51 @@
 import styled from "styled-components";
+import { Media } from "../../ui/breakepoints";
 
 const StyledDetailBlogsPage = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const Image = styled.img`
-  width: 100%;
-  height: 208px;
-  border-radius: 16px 16px 0 0;
+const NewsSite = styled.h1`
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 80px;
+  text-align: center;
 `;
 
-export { StyledDetailBlogsPage, Image };
+const Image = styled.img`
+  width: 1120px;
+  height: 518px;
+  border-radius: 16px 16px 0 0;
+  ${Media.MD} {
+    width: 688px;
+    height: 359px;
+  }
+
+  ${Media.SM} {
+    width: 272px;
+    height: 224px;
+  }
+`;
+
+const Title = styled.h2`
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 32px;
+  text-align: center;
+`;
+
+const Description = styled.h2`
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 32px;
+  text-align: center;
+`;
+
+export { StyledDetailBlogsPage, Image, NewsSite, Title, Description };

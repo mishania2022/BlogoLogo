@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { fetchBlogs } from "../../store/features/Blogs/blogsSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { getBlogs } from "../../store/selectors/blogSelector";
-import { InputValues } from "../../types";
+import { IBlog } from "../../types";
 import { StyledClockLoader } from "../ArticleList/styles";
 import { Blog } from "../Blog/Blog";
 import { StyledBlogList } from "./styles";
@@ -30,10 +30,10 @@ export const BlogList = () => {
 
   return (
     <StyledBlogList>
-      {blogs.map(({ title, imageUrl, publishedAt, id }: InputValues) => {
+      {blogs.map((blog: IBlog) => {
         return (
-          <Link to={`/blogs/${id}`}>
-            <Blog imageUrl={imageUrl} title={title} publishedAt={publishedAt} />
+          <Link to={`/blogs/${blog.id}`}>
+            <Blog blog={blog} />
           </Link>
         );
       })}

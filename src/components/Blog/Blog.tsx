@@ -1,3 +1,4 @@
+import { IBlog } from "../../types";
 import {
   StyledBlog,
   Image,
@@ -7,12 +8,10 @@ import {
 } from "./styles";
 
 interface IProps {
-  imageUrl: string;
-  title: string;
-  publishedAt: string;
+  blog: IBlog;
 }
 
-export const Blog = ({ imageUrl, title, publishedAt }: IProps) => {
+export const Blog = ({ blog: { imageUrl, title, publishedAt } }: IProps) => {
   return (
     <StyledBlog>
       <Image src={imageUrl} />

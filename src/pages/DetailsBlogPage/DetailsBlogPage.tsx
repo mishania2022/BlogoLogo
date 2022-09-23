@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { fetchBlogByDetails } from "../../store/features/Blogs/blogsDetailsSlice";
+import { fetchBlogByDetails } from "../../store/features/blogsDetails/blogsDetailsSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { getDetailsBlogs } from "../../store/selectors/blogDetailsSelector";
 import { IBlog } from "../../types";
-import { StyledDetailBlogsPage } from "./styles";
+import { StyledDetailBlogsPage, Image, NewsSite, Description, Title } from "./styles";
 
 export const DetailsBlogPage = () => {
   const { id = "" } = useParams();
@@ -26,10 +26,10 @@ export const DetailsBlogPage = () => {
 
   return (
     <StyledDetailBlogsPage>
-      <h1>{newsSite}</h1>
-      <img src={imageUrl} alt="image" />
-      <h2>Title: {title}</h2>
-      <h2>Description: {summary}</h2>
+      <NewsSite>{newsSite}</NewsSite>
+      <Image src={imageUrl} alt="image" />
+      <Title>Title: {title}</Title>
+      <Description>Description: {summary}</Description>
     </StyledDetailBlogsPage>
   );
 };

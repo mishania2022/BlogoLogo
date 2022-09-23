@@ -1,12 +1,12 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD5KJUvR9kjE7mfr9oMlZS_1P5bjkPjaEo",
-  authDomain: "blogologo-353e9.firebaseapp.com",
-  projectId: "blogologo-353e9",
-  storageBucket: "blogologo-353e9.appspot.com",
-  messagingSenderId: "400719608935",
-  appId: "1:400719608935:web:b2d46cd8f50185080e28c2"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
 };
 
 // eslint-disable-next-line no-unused-vars

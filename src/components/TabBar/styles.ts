@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Color } from "../../ui/colors";
 
-const StyledTabbarHomePage = styled.div`
+const StyledTabBar = styled.div`
   margin-top: 40px;
   margin-bottom: 64px;
   padding-bottom: 15px;
@@ -16,7 +16,7 @@ const ButtonTab = styled.button`
   background: none;
   border: none;
   cursor: pointer;
-  box-shadow: 10px 5px 5px ${Color.Secondary};
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 `;
 
-export { StyledTabbarHomePage, ButtonTab };
+export { StyledTabBar, ButtonTab };

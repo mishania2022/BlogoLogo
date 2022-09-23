@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { fetchArticleByDetails } from "../../store/features/Articles/articlesDetailsSlice";
+import { fetchArticleByDetails } from "../../store/features/articlesDetails/articlesDetailsSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { getDetailsArticles } from "../../store/selectors/articleDetailsSelectors";
 import { IArticle } from "../../types";
-import { StyledDetailArticlesPage } from "./styles";
+import { StyledDetailArticlesPage, Image, NewsSite, Title, Description } from "./styles";
 
 export const DetailArticlesPage = () => {
   const { id = "" } = useParams();
@@ -26,10 +26,10 @@ export const DetailArticlesPage = () => {
 
   return (
     <StyledDetailArticlesPage>
-      <h1>{newsSite}</h1>
-      <img src={imageUrl} alt="image" />
-      <h2>Title: {title}</h2>
-      <h2>Description: {summary}</h2>
+      <NewsSite>{newsSite}</NewsSite>
+      <Image src={imageUrl} alt="image" />
+      <Title>Title: {title}</Title>
+      <Description>Description: {summary}</Description>
     </StyledDetailArticlesPage>
   );
 };

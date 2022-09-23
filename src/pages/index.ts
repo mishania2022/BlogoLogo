@@ -5,5 +5,17 @@ import { NotFoundPage } from "./NotFoundPage/NotFoundPage";
 import { SearchPage } from "./SearchPage/SearchPage";
 import { SignInPage } from "./SignInPage/SignInPage";
 import { SignUpPage } from "./SignUpPage/SignUpPage";
+import { DetailArticlesPage } from "./DetailArticlesPage/DetailArticlesPage";
+import { DetailsBlogPage } from "./DetailsBlogPage/DetailsBlogPage";
 
-export { ContentPage, FavoritesPage, HomePage, NotFoundPage, SearchPage, SignInPage, SignUpPage };
+export {
+  ContentPage,
+  FavoritesPage,
+  HomePage,
+  NotFoundPage,
+  SearchPage,
+  SignInPage,
+  SignUpPage,
+  DetailArticlesPage,
+  DetailsBlogPage,
+};

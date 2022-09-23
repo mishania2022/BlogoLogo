@@ -1,12 +1,24 @@
 import styled from "styled-components";
+import { Media } from "../../ui/breakepoints";
 import { Color } from "../../ui/colors";
 
 const StyledArticle = styled.li`
-  max-width: 352px;
+  height: 388px;
+  width: 352px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 16px;
   background-color: ${Color.White};
   list-style: none;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px 32px;
+  list-style: none;
+
+  ${Media.MD} {
+    width: 328px;
+  }
+  ${Media.SM} {
+    width: 272px;
+  }
 `;
 
 const Image = styled.img`

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { fetchArticles } from "../../store/features/Articles/articlesSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { getArticles } from "../../store/selectors/articleSelectors";
-import { InputValues } from "../../types";
+import { IArticle } from "../../types";
 import { Article } from "../Article/Article";
 import { StyledArticlesList, StyledClockLoader } from "./styles";
 
@@ -25,10 +25,10 @@ export const ArticlesList = () => {
 
   return (
     <StyledArticlesList>
-      {articles.map(({ title, imageUrl, publishedAt, id }: InputValues) => {
+      {articles.map((article: IArticle) => {
         return (
-          <Link to={`/articles/${id}`}>
-            <Article title={title} imageUrl={imageUrl} publishedAt={publishedAt} />
+          <Link to={`/articles/${article.id}`}>
+            <Article article={article} />
           </Link>
         );
       })}

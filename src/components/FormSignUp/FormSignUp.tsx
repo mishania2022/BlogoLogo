@@ -1,10 +1,10 @@
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { getFirebaseMessage } from "../../utils/firebaseErrors";
 import { Label } from "../Label/Label";
-import { Button, Danger, ExtraDanger, Form, LinkSignIn, StyledRingLoader } from "./styles";
+import { Button, Danger, ExtraDanger, Form, LinkRow, LinkSignIn, StyledRingLoader } from "./styles";
 
 type SignUpValues = {
   email: string;
@@ -71,9 +71,9 @@ export const FormSignUp = () => {
       {errorMessage && <ExtraDanger>{errorMessage}</ExtraDanger>}
       <br></br>
       <Button type="submit">Sign Up {isLoading && <StyledRingLoader color="#d3d636" />}</Button>
-      <LinkSignIn>
-        Already have an account? <Link to="/sign-in">Sign in</Link>
-      </LinkSignIn>
+      <LinkRow>
+        Already have an account? <LinkSignIn to="/sign-in">Sign in</LinkSignIn>
+      </LinkRow>
     </Form>
   );
 };

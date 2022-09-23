@@ -1,15 +1,16 @@
 import { Route, Routes } from "react-router-dom";
-import { MainTemplate } from "./components";
-import { RequireAuth } from "./components";
-import { ContentPage } from "./pages";
-import { FavoritesPage } from "./pages";
-import { HomePage } from "./pages";
-import { NotFoundPage } from "./pages";
-import { SearchPage } from "./pages";
-import { SignInPage } from "./pages";
-import { SignUpPage } from "./pages";
-import { DetailArticlesPage } from "./pages/DetailArticlesPage/DetailArticlesPage";
-import { DetailsBlogPage } from "./pages/DetailsBlogPage/DetailsBlogPage";
+import { MainTemplate, RequireAuth } from "./components";
+import {
+  ContentPage,
+  DetailArticlesPage,
+  DetailsBlogPage,
+  FavoritesPage,
+  HomePage,
+  NotFoundPage,
+  SearchPage,
+  SignInPage,
+  SignUpPage,
+} from "./pages";
 import { ROUTE } from "./routes";
 
 export const App = () => {

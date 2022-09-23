@@ -20,8 +20,8 @@ export const resetCSS = css`
   }
 
   h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
+    /* font-size: 2em;
+    margin: 0.67em 0; */
   }
 
   p + p {
@@ -203,6 +203,10 @@ export const resetCSS = css`
 
   svg:not(:root) {
     overflow: hidden;
+  }
+  
+  li {
+    list-style: none;
   }
 
   table {

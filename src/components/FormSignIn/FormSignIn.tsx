@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { getFirebaseMessage } from "../../utils/firebaseErrors";
 import { StyledRingLoader } from "../FormSignUp/styles";
 import { Label } from "../Label/Label";
-import { Button, Form, LinkSignIn } from "./styles";
+import { Button, Form, LinkRow, LinkSignIn } from "./styles";
 
 type SignInValues = {
   email: string;
@@ -69,12 +69,12 @@ export const FormSignIn = () => {
         }}
       />
       {errors.password && <p className="text-danger">{errors.password.message}</p>}
-      <p>Forgot password?</p>
+      <Link to="/sign-up" >Forgot password?</Link>
       {errorMessage && <p className="text-danger font-bold">{errorMessage}</p>}
       <Button type="submit">Sign In {isLoading && <StyledRingLoader color="#d3d636" />}</Button>
-      <LinkSignIn>
-        Dont have an account? <Link to="/sign-up">Sign Up</Link>
-      </LinkSignIn>
+      <LinkRow>
+        Don`t have an account? <LinkSignIn to="/sign-up">Sign Up</LinkSignIn>
+      </LinkRow>
     </Form>
   );
 };

@@ -1,12 +1,20 @@
 import styled from "styled-components";
+import { Media } from "../../ui/breakepoints";
 import { Color } from "../../ui/colors";
 
 const StyledBlog = styled.li`
+  height: 388px;
   max-width: 352px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   border-radius: 16px;
   background-color: ${Color.White};
-  list-style: none;
+
+  ${Media.MD} {
+    width: 328px;
+  }
+  ${Media.SM} {
+    width: 272px;
+  }
 `;
 
 const Image = styled.img`
