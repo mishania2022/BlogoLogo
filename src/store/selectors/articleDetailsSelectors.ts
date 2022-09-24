@@ -1,3 +1,3 @@
 import { RootState } from "../store";
 
-export const getDetailsArticles = (state: RootState) => state.articleDetails;
+export const getDetailsArticles = (state: RootState) => state.persistedReducer.articleDetails;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { HeartIcon } from "../../assets";
 import { Media } from "../../ui/breakepoints";
 import { Color } from "../../ui/colors";
 
@@ -46,4 +47,23 @@ const Title = styled.h2`
   color: ${Color.Medium};
 `;
 
-export { StyledArticle, Description, Image, Date, Title };
+const Button = styled.button`
+  display: inline;
+  float: right;
+  border: none;
+  cursor: pointer;
+`;
+
+const HeartIconLike = styled(HeartIcon)`
+  height: 20px;
+  width: 20px;
+  fill: yellow;
+  :hover {
+    fill: ${Color.Secondary};
+  }
+  :active {
+    fill: ${Color.PrimaryLight};
+  }
+`;
+
+export { StyledArticle, Description, Image, Date, Title, Button, HeartIconLike };
