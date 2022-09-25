@@ -14,13 +14,21 @@ const StyledArticlesList = styled.ul`
   }
 
   ${Media.SM} {
-    grid-template-columns: repeat(1, 1fr);    
+    grid-template-columns: repeat(1, 1fr);
   }
 `;
 
 const StyledClockLoader = styled(ClockLoader)`
+  grid-column-start: 2;
   margin: 0 auto;
   margin-top: 300px;
+  ${Media.MD} {
+    grid-column-start: 2;
+    margin: 300px -50px;
+  }
+  ${Media.SM} {
+    grid-column-start: 1;
+  }
 `;
 
 export { StyledArticlesList, StyledClockLoader };

@@ -16,7 +16,11 @@ export const ArticlesList = () => {
   }, [dispatch]);
 
   if (isLoading) {
-    return <StyledClockLoader />;
+    return (
+      <StyledArticlesList>
+        <StyledClockLoader />
+      </StyledArticlesList>
+    );
   }
 
   if (error) {

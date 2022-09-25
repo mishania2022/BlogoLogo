@@ -18,9 +18,9 @@ export const BlogList = () => {
 
   if (isLoading) {
     return (
-      <h1>
+      <StyledBlogList>
         <StyledClockLoader />
-      </h1>
+      </StyledBlogList>
     );
   }
 
