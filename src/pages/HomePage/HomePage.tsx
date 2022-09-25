@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TabBar, ArticlesList, BlogList } from "../../components";
+import { TabBar, ArticlesList, BlogList, Select } from "../../components";
 import { Title } from "./styles";
 
 export const HomePage = () => {
@@ -8,6 +8,7 @@ export const HomePage = () => {
   return (
     <div>
       <Title>Blog</Title>
+      <Select/>
       <TabBar setActiveTab={setTab} />
       {tab === "articles" ? <ArticlesList /> : <BlogList />}
     </div>

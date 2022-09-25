@@ -1,3 +1,5 @@
+import { StyledSearchInput } from "./styles";
+
 export const SearchPage = () => {
-  return <div>SearchPage</div>;
+  return <StyledSearchInput placeholder="Search..." />;
 };

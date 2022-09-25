@@ -52,12 +52,12 @@ const Button = styled.button`
 const HeartIconLike = styled(HeartIcon)`
   height: 20px;
   width: 20px;
-  fill: yellow;
+  fill: red;
   :hover {
-    fill: ${Color.Secondary};
+    fill: purple;
   }
   :active {
-    fill: ${Color.PrimaryLight};
+    fill: yellow;
   }
 `;
 

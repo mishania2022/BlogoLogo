@@ -13,6 +13,7 @@ import { SignIn } from "./SignIn/SignIn";
 import { SignUp } from "./SignUp/SignUp";
 import { NavbarList } from "./NavbarList/NavbarList";
 import { TabBar } from "./TabBar/TabBar";
+import { Select } from "./Select/Select";
 
 export {
   Footer,
@@ -30,4 +31,5 @@ export {
   SignIn,
   SignUp,
   TabBar,
+  Select
 };
