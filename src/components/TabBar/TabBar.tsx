@@ -1,3 +1,4 @@
+import { Select } from "components/Select/Select";
 import { StyledTabBar, ButtonTab } from "./styles";
 
 interface IProps {
@@ -21,6 +22,7 @@ export const TabBar = ({ setActiveTab }: IProps) => {
       >
         Blogs
       </ButtonTab>
+      <Select/>
     </StyledTabBar>
   );
 };

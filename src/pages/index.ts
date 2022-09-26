@@ -1,5 +1,6 @@
 import { ContentPage } from "./ContentPage/ContentPage";
-import { FavoritesPage } from "./FavoritesPage/FavoritesPage";
+import { FavoritesArticlesPage } from "./FavoritesArticlesPage/FavoritesArticlesPage";
+import { FavoritesBlogsPage } from "./FavoritesBlogsPage/FavoritesBlogsPage";
 import { HomePage } from "./HomePage/HomePage";
 import { NotFoundPage } from "./NotFoundPage/NotFoundPage";
 import { SearchPage } from "./SearchPage/SearchPage";
@@ -10,7 +11,8 @@ import { DetailsBlogPage } from "./DetailsBlogPage/DetailsBlogPage";
 
 export {
   ContentPage,
-  FavoritesPage,
+  FavoritesArticlesPage,
+  FavoritesBlogsPage,
   HomePage,
   NotFoundPage,
   SearchPage,

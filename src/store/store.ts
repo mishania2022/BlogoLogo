@@ -16,7 +16,8 @@ import {
   blogsReducer,
   articleDetailsReducer,
   blogDetailsReducer,
-  favoritesReducer,
+  favoritesArticlesSlice,
+  favoritesBlogsSlice,
 } from "./index";
 
 const persistConfig = {
@@ -31,7 +32,8 @@ const rootReducer = combineReducers({
   blogs: blogsReducer,
   articleDetails: articleDetailsReducer,
   blogDetails: blogDetailsReducer,
-  favorites: favoritesReducer,
+  favoritesArticles: favoritesArticlesSlice,
+  favoritesBlogs: favoritesBlogsSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

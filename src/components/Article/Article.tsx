@@ -1,4 +1,4 @@
-import { addToFavorites } from "../../store/features/Favorites/favoritesSlice";
+import { addToFavorites } from "../../store/features/favoritesArticlesSlice/favoritesArticlesSlice";
 import { useAppDispatch } from "../../store/hooks/index";
 import { IArticle } from "../../types";
 import { StyledArticle, Image, Description, Date, Title, Button, HeartIconLike } from "./styles";

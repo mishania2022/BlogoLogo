@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import { Link } from "react-router-dom";
-import { removeFavorite } from "../../store/features/Favorites/favoritesSlice";
+import { getFavoritesArticles } from "store/selectors/articleFavoritesSelectors";
+import { removeFavorite } from "../../store/features/favoritesArticlesSlice/favoritesArticlesSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import {
   ArticleItem,
@@ -12,13 +13,12 @@ import {
   Title,
 } from "./styles";
 
-export const FavoritesPage = () => {
+export const FavoritesArticlesPage = () => {
   const dispatch = useAppDispatch();
-  const { favorites } = useAppSelector((state) => state.persistedReducer.favorites);
-
+  const { favoritesArticles } = useAppSelector(getFavoritesArticles);
   return (
     <StyledFavoritesPage>
-      {favorites.map((article) => {
+      {favoritesArticles.map((article) => {
         return (
           <ArticleItem>
             <Link to={`/articles/${article.id}`}>

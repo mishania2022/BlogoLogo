@@ -11,9 +11,9 @@ enum Endpoint {
 }
 
 class SpaceFlyAPI {
-  private readonly BASE_ARTICLE_URL = process.env.REACT_APP_ARTICLES_BASE_URL as string;
+  private readonly BASE_URL = process.env.REACT_APP_ARTICLES_BASE_URL as string;
   private readonly ARTICLE_API = axios.create({
-    baseURL: this.BASE_ARTICLE_URL,
+    baseURL: this.BASE_URL,
   });
 
   public async getAllArticles() {
@@ -28,9 +28,8 @@ class SpaceFlyAPI {
     return data;
   }
 
-  private readonly BASE_BLOG_URL = process.env.REACT_APP_BLOGS_BASE_URL as string;
   private readonly BLOG_API = axios.create({
-    baseURL: this.BASE_BLOG_URL,
+    baseURL: this.BASE_URL,
   });
 
   public async getAllBlogs() {

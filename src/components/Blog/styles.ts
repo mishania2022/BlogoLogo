@@ -5,8 +5,8 @@ import { Color } from "../../ui/colors";
 
 const StyledBlog = styled.li`
   height: 388px;
-  max-width: 352px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  width: 352px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 16px;
   background-color: ${Color.White};
 
@@ -44,7 +44,11 @@ const Title = styled.h2`
 
 const Button = styled.button`
   display: inline;
-  float: right;
+  position: absolute;
+  padding: 10px;
+  top: 0;
+  right: 0;
+  background: transparent;
   border: none;
   cursor: pointer;
 `;
@@ -52,7 +56,7 @@ const Button = styled.button`
 const HeartIconLike = styled(HeartIcon)`
   height: 20px;
   width: 20px;
-  fill: red;
+  fill: yellow;
   :hover {
     fill: purple;
   }

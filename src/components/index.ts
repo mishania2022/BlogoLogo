@@ -14,7 +14,9 @@ import { SignUp } from "./SignUp/SignUp";
 import { NavbarList } from "./NavbarList/NavbarList";
 import { TabBar } from "./TabBar/TabBar";
 import { Select } from "./Select/Select";
-
+import { FavoritesArticles } from "./FavoritesArticles/FavoritesArticles";
+import { FavoritesBlogs } from "./FavoritesBlogs/FavoritesBlogs";
+import { ToggleTheme } from "./ToggleTheme/ToggleTheme";
 export {
   Footer,
   MainTemplate,
@@ -31,5 +33,8 @@ export {
   SignIn,
   SignUp,
   TabBar,
-  Select
+  Select,
+  FavoritesArticles,
+  FavoritesBlogs,
+  ToggleTheme
 };

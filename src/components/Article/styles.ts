@@ -49,7 +49,11 @@ const Title = styled.h2`
 
 const Button = styled.button`
   display: inline;
-  float: right;
+  position: absolute;
+  padding: 10px;
+  top: 0;
+  right: 0;
+  background: transparent;
   border: none;
   cursor: pointer;
 `;
@@ -62,7 +66,7 @@ const HeartIconLike = styled(HeartIcon)`
     fill: purple;
   }
   :active {
-    fill: yellow;
+    fill: orange;
   }
 `;
 

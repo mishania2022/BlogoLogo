@@ -1,4 +1,4 @@
-import { addToFavorites } from "../../store/features/Favorites/favoritesSlice";
+import { addToFavoritesBlog } from "store/features/favoritesBlogsSlice/favoritesBlogsSlice";
 import { useAppDispatch } from "../../store/hooks";
 import { IBlog } from "../../types";
 import {
@@ -26,7 +26,7 @@ export const Blog = ({ blog }: IProps) => {
         <Button
           onClick={(event) => {
             event.preventDefault();
-            dispatch(addToFavorites(blog));
+            dispatch(addToFavoritesBlog(blog));
           }}
         >
           <HeartIconLike />

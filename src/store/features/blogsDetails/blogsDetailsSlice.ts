@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { IArticle } from "../../../types";
+import { IArticle, IBlog } from "../../../types";
 import { AxiosError } from "axios";
 import { spaceFlyAPI } from "../../../services";
 
@@ -18,7 +18,7 @@ export const fetchBlogByDetails = createAsyncThunk<IArticle, string, { rejectVal
 interface IBlogDetailState {
   isLoading: boolean;
   error: null | string;
-  details: IArticle | null;
+  details: IBlog | null;
 }
 
 const initialState: IBlogDetailState = {

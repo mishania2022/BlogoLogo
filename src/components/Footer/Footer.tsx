@@ -1,10 +1,11 @@
-import { ExpDate, ToggleTheme, StyledFooter } from "./styles";
 
+import { ToggleTheme } from "components";
+import { ExpDate, StyledFooter } from "./styles";
 export const Footer = () => {
   return (
     <StyledFooter>
       <ExpDate>©2022 Blogologo</ExpDate>
-      <ToggleTheme>Dark theme</ToggleTheme>
+      <ToggleTheme/>
     </StyledFooter>
   );
 };

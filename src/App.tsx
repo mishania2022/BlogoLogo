@@ -3,8 +3,9 @@ import { MainTemplate, RequireAuth } from "./components";
 import {
   ContentPage,
   DetailArticlesPage,
-  DetailsBlogPage,
-  FavoritesPage,
+  DetailsBlogPage,  
+  FavoritesArticlesPage,  
+  FavoritesBlogsPage,  
   HomePage,
   NotFoundPage,
   SearchPage,
@@ -24,7 +25,8 @@ export const App = () => {
         <Route element={<RequireAuth />}>
           <Route path={ROUTE.CONTENT} element={<ContentPage />} />
         </Route>
-        <Route path={ROUTE.FAVORITES} element={<FavoritesPage />} />
+        <Route path={ROUTE.FAVORITES_ARTICLES} element={<FavoritesArticlesPage />} />
+        <Route path={ROUTE.FAVORITES_BLOGS} element={<FavoritesBlogsPage />} />
         <Route path={ROUTE.SING_IN} element={<SignInPage />} />
         <Route path={ROUTE.SIGN_UP} element={<SignUpPage />} />
         <Route path={ROUTE.NOT_FOUND} element={<NotFoundPage />} />

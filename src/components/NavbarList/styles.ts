@@ -3,7 +3,7 @@ import styled from "styled-components";
 const StyledNavbarList = styled.ul`
   grid-column-start: 3;
   grid-column-end: 4;
-  gap: 10px;
+  gap: 5px;
   display: flex;
   justify-content: space-between;
 `;
