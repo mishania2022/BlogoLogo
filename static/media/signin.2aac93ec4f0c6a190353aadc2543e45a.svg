@@ -1,0 +1,22 @@
+<svg width="20" height="30" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>Layer 1</title>
+  <g stroke-width="0">
+   <g transform="matrix(0.2 0 0 0.2 0 0)">
+    <g transform="matrix(4.17 0 0 4.17 200 200)">
+     <path fill-rule="nonzero" fill="#8D6E63" d="m-23.96164,16.03839l0,-38l26,0l0,38l-26,0z" transform="matrix(1 0 0 1 -24 -24)"/>
+    </g>
+    <g transform="matrix(4.17 0 0 4.17 200 200)">
+     <path fill-rule="nonzero" fill="#6D4C41" d="m-23.96164,16.03839l0,-38l26,0l-26,38z" transform="matrix(1 0 0 1 -24 -24)"/>
+    </g>
+    <g transform="matrix(4.17 0 0 4.17 177.08 200)">
+     <path fill-rule="nonzero" fill="#FF5722" d="m-23.96164,16.03839l0,-38l15,-2l0,42l-15,-2z" transform="matrix(1 0 0 1 -18.5 -24)"/>
+    </g>
+    <g transform="matrix(4.17 0 0 4.17 191.67 200)">
+     <path fill-rule="nonzero" fill="#BF360C" d="m-11.96164,-5.96161l0,6c0,0.60156 -0.39844,1 -1,1c-0.60156,0 -1,-0.39844 -1,-1l0,0l0,-6c0,-0.60156 0.39844,-1 1,-1c0.60156,0 1,0.39844 1,1z" transform="matrix(1 0 0 1 -22 -24)"/>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>
