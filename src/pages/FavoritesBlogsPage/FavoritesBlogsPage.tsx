@@ -22,7 +22,7 @@ export const FavoritesBlogsPage = () => {
     <StyledFavoritesPage>
       {favoritesBlogs.map((blog) => {
         return (
-          <Link to={`/articles/${blog.id}`}>
+          <Link to={`/blogs/${blog.id}`}>
             <BlogItem>
               <Description>
                 <NewsSite>NewsSite: {blog.newsSite}</NewsSite>
