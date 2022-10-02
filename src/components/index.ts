@@ -13,10 +13,15 @@ import { SignIn } from "./SignIn/SignIn";
 import { SignUp } from "./SignUp/SignUp";
 import { NavbarList } from "./NavbarList/NavbarList";
 import { TabBar } from "./TabBar/TabBar";
-import { Select } from "./Select/Select";
+import { CustomSelect } from "./CustomSelect/CustomSelect";
 import { FavoritesArticles } from "./FavoritesArticles/FavoritesArticles";
 import { FavoritesBlogs } from "./FavoritesBlogs/FavoritesBlogs";
 import { ToggleTheme } from "./ToggleTheme/ToggleTheme";
+import { SearchArticlesList } from "./SearchArticleList/SearchArticleList";
+import { SearchBlogsList } from "./SearchBlogList/SearchBlogList";
+import { SearchInput } from "./SearchInput/SearchInput";
+import { Burger } from "./Burger/Burger";
+
 export {
   Footer,
   MainTemplate,
@@ -33,8 +38,12 @@ export {
   SignIn,
   SignUp,
   TabBar,
-  Select,
+  CustomSelect,
   FavoritesArticles,
   FavoritesBlogs,
-  ToggleTheme
+  ToggleTheme,
+  SearchArticlesList,
+  SearchBlogsList,
+  SearchInput,
+  Burger
 };

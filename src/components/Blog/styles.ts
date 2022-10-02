@@ -5,16 +5,16 @@ import { Color } from "../../ui/colors";
 
 const StyledBlog = styled.li`
   height: 388px;
-  width: 352px;
+  max-width: 352px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 16px;
   background-color: ${Color.White};
 
   ${Media.MD} {
-    width: 328px;
+    max-width: 328px;
   }
   ${Media.SM} {
-    width: 272px;
+    max-width: 272px;
   }
 `;
 

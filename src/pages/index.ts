@@ -1,4 +1,3 @@
-import { ContentPage } from "./ContentPage/ContentPage";
 import { FavoritesArticlesPage } from "./FavoritesArticlesPage/FavoritesArticlesPage";
 import { FavoritesBlogsPage } from "./FavoritesBlogsPage/FavoritesBlogsPage";
 import { HomePage } from "./HomePage/HomePage";
@@ -10,7 +9,6 @@ import { DetailArticlesPage } from "./DetailArticlesPage/DetailArticlesPage";
 import { DetailsBlogPage } from "./DetailsBlogPage/DetailsBlogPage";
 
 export {
-  ContentPage,
   FavoritesArticlesPage,
   FavoritesBlogsPage,
   HomePage,

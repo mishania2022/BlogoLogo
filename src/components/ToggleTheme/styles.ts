@@ -1,14 +1,33 @@
 import styled from "styled-components";
+import { Media } from "ui/breakepoints";
 import { Color } from "../../ui/colors";
 
-type isDarkTheme = { $isDarkTheme: "dark" | "light" };
+type setTheme = { isTheme: "dark" | "light" };
 
-export const Button = styled.button<isDarkTheme>`
-  height: 20px;
-  padding: 5px;
+export const Button = styled.button<setTheme>`
+  height: 30px;
+  padding: 4px 5px;
+  grid-column-start: 3;
+  grid-column-end: 4;
   border-radius: 10px;
   border: none;
-  background-color: ${({ $isDarkTheme }) =>
-    $isDarkTheme === "dark" ? Color.Primary : Color.Gray};
+  font-size: 13px;
+  line-height: 15px;
+  color: ${({ isTheme }) => (isTheme === "dark" ? Color.Secondary : Color.Gray)};
   transition: all 0.3s;
+  background-color: ${({ isTheme }) => (isTheme === "light" ? Color.Primary : Color.Gray)};
+  transition: all 0.3s;
+
+  ${Media.MD} {
+    height: 45px;
+    padding: 10px 10px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+  ${Media.SM} {
+    height: 40px;
+    padding: 10px 10px;
+    font-size: 12px;
+    line-height: 14px;
+  }
 `;

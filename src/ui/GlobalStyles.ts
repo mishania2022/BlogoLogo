@@ -11,7 +11,7 @@ ${resetCSS};
   };
 
 #root[data-theme='dark']{
-  background-color:${Color.Primary};
+  background-color:${Color.Secondary};
 };
 
 body{  

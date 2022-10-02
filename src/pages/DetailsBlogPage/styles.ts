@@ -16,7 +16,7 @@ const NewsSite = styled.h1`
 `;
 
 const Image = styled.img`
-  width: 1120px;
+  max-width: 1120px;
   height: 518px;
   border-radius: 16px 16px 0 0;
   ${Media.MD} {
@@ -31,10 +31,12 @@ const Image = styled.img`
 `;
 
 const Title = styled.h2`
+  padding-top: 40px;
+  padding-bottom: 15px;
   font-family: "Inter";
   font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
+  font-weight: 600;
+  font-size: 24px;
   line-height: 32px;
   text-align: center;
 `;
@@ -45,7 +47,7 @@ const Description = styled.h2`
   font-weight: 400;
   font-size: 18px;
   line-height: 32px;
-  text-align: center;
+  text-align: justify;
 `;
 
 export { StyledDetailBlogsPage, Image, NewsSite, Title, Description };

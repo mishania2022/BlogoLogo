@@ -1,4 +1,4 @@
 import styled from "styled-components";
 
-const StyledSearch = styled.div``;
+const StyledSearch = styled.li``;
 export { StyledSearch };

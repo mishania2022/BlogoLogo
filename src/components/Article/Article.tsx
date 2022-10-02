@@ -14,7 +14,12 @@ export const Article = ({ article }: IProps) => {
     <StyledArticle>
       <Image src={article.imageUrl} alt="image" />
       <Description>
-        <Date>{article.publishedAt}</Date>
+        <Date>
+          {article.publishedAt.substring(8, 10) + "."
+            +article.publishedAt.substring(5, 7) + "."
+            +article.publishedAt.substring(0, 4) + " "
+            +article.publishedAt.substring(11, 19)}
+        </Date>
         <Title>{article.title}</Title>
         <Button
           onClick={(event) => {

@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+import { CloseIcon } from "assets";
 import { Link } from "react-router-dom";
 import { getFavoritesArticles } from "store/selectors/articleFavoritesSelectors";
 import { removeFavorite } from "../../store/features/favoritesArticlesSlice/favoritesArticlesSlice";
@@ -8,9 +9,10 @@ import {
   Button,
   Data,
   Description,
-  StyledBasket,
   StyledFavoritesPage,
   Title,
+  Image,
+  NewsSite,
 } from "./styles";
 
 export const FavoritesArticlesPage = () => {
@@ -20,24 +22,24 @@ export const FavoritesArticlesPage = () => {
     <StyledFavoritesPage>
       {favoritesArticles.map((article) => {
         return (
-          <ArticleItem>
-            <Link to={`/articles/${article.id}`}>
-              <img src={article.imageUrl} alt="image" width="100%" height="200px" />
-              <Title>Title: {article.title}</Title>
-              <div className="d-flex justify-content-between">
-                <Description>NewsSite: {article.newsSite}</Description>
+          <Link to={`/articles/${article.id}`}>
+            <ArticleItem>
+              <Description>
+                <NewsSite>NewsSite: {article.newsSite}</NewsSite>
+                <Image src={article.imageUrl} alt="image" />
                 <Data>Data: {article.publishedAt}</Data>
+                <Title>Title: {article.title}</Title>
                 <Button
                   onClick={(event) => {
                     event.preventDefault();
                     dispatch(removeFavorite(article.id));
                   }}
                 >
-                  <StyledBasket />
+                  <CloseIcon/>
                 </Button>
-              </div>
-            </Link>
-          </ArticleItem>
+              </Description>
+            </ArticleItem>
+          </Link>
         );
       })}
     </StyledFavoritesPage>

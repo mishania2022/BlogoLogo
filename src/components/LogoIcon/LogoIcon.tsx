@@ -1,13 +1,13 @@
 import { StyledLogoIcon } from "./styles";
 import { Link } from "react-router-dom";
 import { ROUTE } from "../../routes";
-import { Logo } from "../../assets";
+import { LogoIcon } from "../../assets";
 
-export const LogoIcon = () => {
+export const Logo = () => {
   return (
     <StyledLogoIcon>
       <Link to={ROUTE.HOME}>
-        <Logo />
+        <LogoIcon />
       </Link>
     </StyledLogoIcon>
   );

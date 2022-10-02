@@ -8,4 +8,5 @@ export enum Color {
   Error = "#FD3419",
   White = "#FFFFFF",
   Gray = "#F3F3F3",
+  Yellow="yellow",
 }

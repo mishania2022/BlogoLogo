@@ -6,15 +6,6 @@ const StyledDetailArticlesPage = styled.div`
   flex-direction: column;
 `;
 
-const NewsSite = styled.h1`
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 56px;
-  line-height: 80px;
-  text-align: center;
-`;
-
 const Image = styled.img`
   width: 1120px;
   height: 518px;
@@ -30,11 +21,22 @@ const Image = styled.img`
   }
 `;
 
-const Title = styled.h2`
+const NewsSite = styled.h1`
   font-family: "Inter";
   font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 80px;
+  text-align: center;
+`;
+
+const Title = styled.h2`
+  padding-top: 40px;
+  padding-bottom: 15px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
   line-height: 32px;
   text-align: center;
 `;
@@ -45,7 +47,7 @@ const Description = styled.h2`
   font-weight: 400;
   font-size: 18px;
   line-height: 32px;
-  text-align: center;
+  text-align: justify;
 `;
 
 export { StyledDetailArticlesPage, Image, NewsSite, Title, Description };

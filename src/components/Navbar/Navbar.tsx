@@ -1,12 +1,12 @@
-import { LogoIcon } from "../LogoIcon/LogoIcon";
-import { NavbarList } from "../";
+import { Burger } from "components";
+import { Logo } from "../LogoIcon/LogoIcon";
 import { StyledNavbar } from "./styles";
 
 export const Navbar = () => {
   return (
     <StyledNavbar>
-      <LogoIcon />
-      <NavbarList />
+      <Logo />
+      <Burger />
     </StyledNavbar>
   );
 };

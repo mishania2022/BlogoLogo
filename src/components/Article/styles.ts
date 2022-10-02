@@ -4,8 +4,8 @@ import { Media } from "../../ui/breakepoints";
 import { Color } from "../../ui/colors";
 
 const StyledArticle = styled.li`
+  max-width: 352px;
   height: 388px;
-  width: 352px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 16px;
   background-color: ${Color.White};
@@ -15,10 +15,10 @@ const StyledArticle = styled.li`
   list-style: none;
 
   ${Media.MD} {
-    width: 328px;
+    max-width: 328px;
   }
   ${Media.SM} {
-    width: 272px;
+    max-width: 272px;
   }
 `;
 
@@ -28,23 +28,40 @@ const Image = styled.img`
   border-radius: 16px 16px 0 0;
 `;
 
-const Description = styled.div`
-  padding: 32px;
-`;
-
 const Date = styled.h3`
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   color: ${Color.Secondary};
   margin-bottom: 8px;
+  ${Media.MD} {
+  }
+  ${Media.SM} {
+    text-align: justify;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 12px;
+  }
 `;
 
 const Title = styled.h2`
+  text-align: center;
   font-weight: 600;
   font-size: 18px;
   line-height: 28px;
   color: ${Color.Medium};
+  ${Media.MD} {
+  }
+  ${Media.SM} {
+    text-align: justify;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
+  }
+`;
+
+const Description = styled.div`
+  padding: 32px;
 `;
 
 const Button = styled.button`
@@ -65,7 +82,8 @@ const HeartIconLike = styled(HeartIcon)`
   :hover {
     fill: purple;
   }
-  :active {
+  :active,
+  :focus {
     fill: orange;
   }
 `;

@@ -1,38 +1,33 @@
 import styled from "styled-components";
 import { Media } from "../../ui/breakepoints";
 
-const Wrapper = styled.main`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 1920px;
   margin: 0 auto;
   background: inherit;
-
-  ${Media.MD} {
-    max-width: 768px;
-  }
-
-  ${Media.SM} {
-    max-width: 320px;
-  }
 `;
-const Container = styled.div`
+
+const Container = styled.cite`
+  max-width: 1120px;
   display: flex;
   flex-direction: column;
   min-height: 85vh;
   margin: 0 auto;
-  width: 1120px;
+  margin-top: 90px;
+  padding: 0 32px;
 
   ${Media.MD} {
-    max-width: 688px;
+    max-width: 686px;
   }
 
   ${Media.SM} {
-    max-width: 273px;
+    max-width: 272px;
   }
 `;
 
-const Main = styled.div`
+const Main = styled.main`
   flex-grow: 1;
 `;
+
 export { Wrapper, Container, Main };

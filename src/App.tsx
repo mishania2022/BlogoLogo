@@ -1,11 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import { MainTemplate, RequireAuth } from "./components";
 import {
-  ContentPage,
   DetailArticlesPage,
-  DetailsBlogPage,  
-  FavoritesArticlesPage,  
-  FavoritesBlogsPage,  
+  DetailsBlogPage,
+  FavoritesArticlesPage,
+  FavoritesBlogsPage,
   HomePage,
   NotFoundPage,
   SearchPage,
@@ -23,10 +22,9 @@ export const App = () => {
         <Route path={ROUTE.ARTICLE_DETAILS} element={<DetailArticlesPage />} />
         <Route path={ROUTE.SEARCH} element={<SearchPage />} />
         <Route element={<RequireAuth />}>
-          <Route path={ROUTE.CONTENT} element={<ContentPage />} />
+          <Route path={ROUTE.FAVORITES_ARTICLES} element={<FavoritesArticlesPage />} />
+          <Route path={ROUTE.FAVORITES_BLOGS} element={<FavoritesBlogsPage />} />
         </Route>
-        <Route path={ROUTE.FAVORITES_ARTICLES} element={<FavoritesArticlesPage />} />
-        <Route path={ROUTE.FAVORITES_BLOGS} element={<FavoritesBlogsPage />} />
         <Route path={ROUTE.SING_IN} element={<SignInPage />} />
         <Route path={ROUTE.SIGN_UP} element={<SignUpPage />} />
         <Route path={ROUTE.NOT_FOUND} element={<NotFoundPage />} />

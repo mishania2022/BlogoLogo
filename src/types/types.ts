@@ -35,3 +35,8 @@ interface IEvent {
   id: string;
   provider: string;
 }
+
+export interface IOption {
+  value: string;
+  label: string;
+}

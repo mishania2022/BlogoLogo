@@ -11,10 +11,8 @@ export const ToggleTheme = () => {
   };
 
   return (
-    <div>
-      <Button type="button" onClick={toggleTheme} $isDarkTheme={theme}>
-        Dark theme
-      </Button>
-    </div>
+    <Button type="button" onClick={toggleTheme} isTheme={theme}>
+      {theme === "light" ? "set dark" : "set light"}
+    </Button>
   );
 };

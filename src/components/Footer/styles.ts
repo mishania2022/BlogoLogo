@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { Color } from "../../ui/colors";
 
-const StyledFooter = styled.div`
-  display: flex;
-  justify-content: space-between;
+const StyledFooter = styled.footer`
+  display: grid;
+  grid-template-columns: 1fr 5fr 0.5fr;
   padding: 24px 0;
 `;
 

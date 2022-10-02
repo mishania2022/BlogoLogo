@@ -2,12 +2,16 @@ import styled from "styled-components";
 import { Color } from "../../ui/colors";
 
 const StyledNavbar = styled.nav`
-  height: 96px;
+  display: flex;
   width: 100%;
-  margin-bottom: 192px;
+  height: 96px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  margin-bottom: 80px;
   padding: 20px 32px;
-  display: grid;
-  grid-template-columns: 1fr 6fr 3fr;
+  justify-content: space-between;
   background: ${Color.White};
 `;
 

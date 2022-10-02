@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { Color } from "ui/colors";
 
-const StyledForm = styled.form`
-  float: right;
-  width: 20%;
+const StyledSearchInput = styled.input`
+  width: 100%;
   height: 50px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 30px 0 10px;
   padding: 20px;
   background: ${Color.White};
   font-weight: 400;
@@ -14,11 +14,9 @@ const StyledForm = styled.form`
   color: ${Color.Primary};
   border-radius: 10px;
   border: none;
-`;
-const StyledSelect = styled.select`
-  width: 100%;
-  color: ${Color.Medium};
-  border: none;
+  &::placeholder {
+    color: ${Color.Secondary};
+  }
 `;
 
-export { StyledForm, StyledSelect };
+export { StyledSearchInput };

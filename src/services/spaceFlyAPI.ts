@@ -28,6 +28,22 @@ class SpaceFlyAPI {
     return data;
   }
 
+  public async getSearchArticles(word: string) {
+    // eslint-disable-next-line max-len
+    const { data } = await this.ARTICLE_API.get<IArticle[]>(
+      Endpoint.ARTICLES + `?title_contains=${word}`,
+    );
+
+    return data;
+  }
+
+  public async getSortArticles(sort: string | null) {
+    // eslint-disable-next-line max-len
+    const { data } = await this.ARTICLE_API.get<IArticle[]>(Endpoint.ARTICLES + `?_sort=${sort}`);
+
+    return data;
+  }
+
   private readonly BLOG_API = axios.create({
     baseURL: this.BASE_URL,
   });
@@ -39,6 +55,19 @@ class SpaceFlyAPI {
   }
   public async getDetailsById(id: string = "") {
     const { data } = await this.BLOG_API.get<IBlog>(`blogs/${id}`);
+
+    return data;
+  }
+  public async getSearchBlogs(word: string) {
+    // eslint-disable-next-line max-len
+    const { data } = await this.BLOG_API.get<IBlog[]>(Endpoint.BLOGS + `?title_contains=${word}`);
+
+    return data;
+  }
+
+  public async getSortBlogs(sort: string | null) {
+    // eslint-disable-next-line max-len
+    const { data } = await this.BLOG_API.get<IBlog[]>(Endpoint.BLOGS + `?_sort=${sort}`);
 
     return data;
   }

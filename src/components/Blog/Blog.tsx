@@ -21,7 +21,10 @@ export const Blog = ({ blog }: IProps) => {
     <StyledBlog>
       <Image src={blog.imageUrl} />
       <Description>
-        <Date>{blog.publishedAt}</Date>
+        <Date>{blog.publishedAt.substring(8, 10) + "."
+            +blog.publishedAt.substring(5, 7) + "."
+            +blog.publishedAt.substring(0, 4) + " "
+            +blog.publishedAt.substring(11, 19)}</Date>
         <Title>{blog.title}</Title>
         <Button
           onClick={(event) => {

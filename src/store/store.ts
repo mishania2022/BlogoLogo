@@ -18,12 +18,17 @@ import {
   blogDetailsReducer,
   favoritesArticlesSlice,
   favoritesBlogsSlice,
+  searchBlogsSlice,
+  sortArticlesSlice,
+  sortWordSlice
 } from "./index";
+import searchArticlesSlice from "./features/searchArticlesSlice/searchArticlesSlice";
+import sortBlogsSlice from "./features/sortBlogsSlice/sortBlogsSlice";
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["favorites", "user"],
+  whitelist: ["favoritesArticles", "favoritesBlogs", "user"],
 };
 
 const rootReducer = combineReducers({
@@ -34,6 +39,11 @@ const rootReducer = combineReducers({
   blogDetails: blogDetailsReducer,
   favoritesArticles: favoritesArticlesSlice,
   favoritesBlogs: favoritesBlogsSlice,
+  searchArticles: searchArticlesSlice,
+  searchBlogs: searchBlogsSlice,
+  sortArticles: sortArticlesSlice,
+  sortBlogs: sortBlogsSlice,
+  sortWord: sortWordSlice
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

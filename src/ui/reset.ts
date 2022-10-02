@@ -20,8 +20,7 @@ export const resetCSS = css`
   }
 
   h1 {
-    /* font-size: 2em;
-    margin: 0.67em 0; */
+    
   }
 
   p + p {
@@ -167,7 +166,7 @@ export const resetCSS = css`
   dl,
   ol,
   ul {
-    margin: 1em 0;
+    margin: 0 0;
   }
 
   ol ol,
