@@ -21,7 +21,7 @@ import { SearchArticlesList } from "./SearchArticleList/SearchArticleList";
 import { SearchBlogsList } from "./SearchBlogList/SearchBlogList";
 import { SearchInput } from "./SearchInput/SearchInput";
 import { Burger } from "./Burger/Burger";
-
+import { Pagination } from "./Pagination/Pagination";
 export {
   Footer,
   MainTemplate,
@@ -45,5 +45,6 @@ export {
   SearchArticlesList,
   SearchBlogsList,
   SearchInput,
-  Burger
+  Burger,
+  Pagination
 };

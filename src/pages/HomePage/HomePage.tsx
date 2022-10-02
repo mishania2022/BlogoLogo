@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TabBar, ArticlesList, BlogList } from "../../components";
+import { TabBar, ArticlesList, BlogList, Pagination } from "../../components";
 
 export const HomePage = () => {
   const [tab, setTab] = useState<"articles" | "blogs">("articles");
@@ -8,6 +8,7 @@ export const HomePage = () => {
     <>
       <TabBar setActiveTab={setTab} />
       {tab === "articles" ? <ArticlesList /> : <BlogList />}
+      <Pagination />
     </>
   );
 };

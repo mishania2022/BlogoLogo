@@ -8,6 +8,8 @@ enum Endpoint {
   BLOGS_COUNT = "blogs/count",
   BLOGS = "blogs",
   BLOGS_ID = "blogs/{id}",
+  ARTICLES_LIMIT = "articles?_limit=12",
+  BLOGS_LIMIT = "blogs?_limit=12",
 }
 
 class SpaceFlyAPI {
@@ -68,6 +70,26 @@ class SpaceFlyAPI {
   public async getSortBlogs(sort: string | null) {
     // eslint-disable-next-line max-len
     const { data } = await this.BLOG_API.get<IBlog[]>(Endpoint.BLOGS + `?_sort=${sort}`);
+
+    return data;
+  }
+
+  public async getArticlesByPage(page: number) {
+    const params = {
+      _start: page,
+    };
+
+    const { data } = await this.ARTICLE_API.get<IArticle[]>(Endpoint.ARTICLES_LIMIT, { params });
+
+    return data;
+  }
+
+  public async getBlogsByPage(page: number) {
+    const params = {
+      _start: page,
+    };
+
+    const { data } = await this.BLOG_API.get<IBlog[]>(Endpoint.BLOGS_LIMIT, { params });
 
     return data;
   }
