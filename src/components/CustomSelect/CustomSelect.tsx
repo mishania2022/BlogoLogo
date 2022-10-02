@@ -1,8 +1,8 @@
-import { useState } from "react";
 import Select, { SingleValue } from "react-select";
 import { setSortWord } from "store/features/sortWordSlice/sortWordSlice";
 import { IOption } from "../../types/types";
 import { CustomStyles } from "./styles";
+import { useDispatch } from "react-redux";
 
 const options: IOption[] = [
   { value: "title", label: "Title" },
@@ -10,14 +10,9 @@ const options: IOption[] = [
 ];
 
 export const CustomSelect = () => {
-  
-  const [value, setValue] = useState("");
-  
-  const { payload } = setSortWord(value);
-  
-
-  const handleSort = (option: SingleValue<IOption>): void => {
-    if (option) setValue(option.value);
+  const dispatch = useDispatch();
+  const handleSort = (option: any | SingleValue<IOption>): void => {
+    dispatch(setSortWord(option.value));
   };
 
   return <Select options={options} styles={CustomStyles} onChange={handleSort} />;

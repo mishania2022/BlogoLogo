@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface UserState {
+interface WordState {
   sortWord: null | string;
 }
 
-const initialState: UserState = {
+const initialState: WordState = {
   sortWord: null,
 };
 
