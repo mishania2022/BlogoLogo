@@ -16,9 +16,9 @@ interface IProps {
 
 export const FormSignUp = ({ toggleModal }: IProps) => {
   const dispatch = useAppDispatch();
+  const [isLoading, setIsLoading] = useState(false);
   const [errorMessage] = useState<string | null>(null);
-  const [isLoading] = useState(false);
-
+  
   const {
     register,
     handleSubmit,
@@ -27,6 +27,7 @@ export const FormSignUp = ({ toggleModal }: IProps) => {
   } = useForm<SignUpValues>();
 
   const onSubmit: SubmitHandler<SignUpValues> = (userInfo) => {
+    setIsLoading(true);
     dispatch(fetchSignInUser(userInfo))
       .then(() => {
         toggleModal(true);
