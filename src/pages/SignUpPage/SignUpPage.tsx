@@ -1,6 +1,6 @@
 import { Modal } from "components";
 import { useState } from "react";
-import { FormSignUp } from "../../components/FormSignUp/FormSignUp";
+import { FormSignUp } from "components/FormSignUp/FormSignUp";
 import { StyledSignUpPage } from "./styles";
 
 export const SignUpPage = () => {

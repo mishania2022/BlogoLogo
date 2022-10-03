@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TabBar, ArticlesList, BlogList, Pagination } from "../../components";
+import { TabBar, ArticlesList, BlogList, Pagination } from "components";
 
 export const HomePage = () => {
   const [tab, setTab] = useState<"articles" | "blogs">("articles");

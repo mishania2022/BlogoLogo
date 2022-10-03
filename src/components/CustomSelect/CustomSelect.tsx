@@ -1,6 +1,6 @@
 import Select, { SingleValue } from "react-select";
 import { setSortWord } from "store/features/sortWordSlice/sortWordSlice";
-import { IOption } from "../../types/types";
+import { IOption } from "types/types";
 import { CustomStyles } from "./styles";
 import { useDispatch } from "react-redux";
 

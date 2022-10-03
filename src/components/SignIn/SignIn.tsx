@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ROUTE } from "../../routes";
+import { ROUTE } from "routes";
 import { StyledSignIn, StyledSignInIcon } from "./styles";
 
 export const SignIn = () => {

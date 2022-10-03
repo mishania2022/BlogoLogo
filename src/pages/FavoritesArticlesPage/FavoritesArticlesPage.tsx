@@ -2,8 +2,8 @@
 import { CloseIcon } from "assets";
 import { Link } from "react-router-dom";
 import { getFavoritesArticles } from "store/selectors/articleFavoritesSelectors";
-import { removeFavorite } from "../../store/features/favoritesArticlesSlice/favoritesArticlesSlice";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { removeFavorite } from "store/features/favoritesArticlesSlice/favoritesArticlesSlice";
+import { useAppDispatch, useAppSelector } from "store/hooks";
 import {
   ArticleItem,
   Button,

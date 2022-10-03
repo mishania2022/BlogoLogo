@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { IArticle } from "../../../types";
+import { IArticle } from "types";
 import { AxiosError } from "axios";
-import { spaceFlyAPI } from "../../../services";
+import { spaceFlyAPI } from "services";
 
 export const fetchArticleByDetails = createAsyncThunk<IArticle, string, { rejectValue: string }>(
   "articleDetails/fetchArticleByDetails",

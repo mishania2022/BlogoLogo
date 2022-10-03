@@ -1,9 +1,10 @@
+import { StyledArticlesList, StyledClockLoader } from "components/ArticleList/styles";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { fetchArticleByDetails } from "../../store/features/articlesDetails/articlesDetailsSlice";
+import { fetchArticleByDetails } from "store/features/articlesDetails/articlesDetailsSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { getDetailsArticles } from "../../store/selectors/articleDetailsSelectors";
-import { IArticle } from "../../types";
+import { getDetailsArticles } from "store/selectors/articleDetailsSelectors";
+import { IArticle } from "types";
 import { StyledDetailArticlesPage, Image, NewsSite, Title, Description } from "./styles";
 
 export const DetailArticlesPage = () => {
@@ -17,7 +18,11 @@ export const DetailArticlesPage = () => {
   }, [dispatch, id]);
 
   if (isLoading) {
-    return <div>Loading ...</div>;
+    return (
+      <StyledArticlesList>
+        <StyledClockLoader />
+      </StyledArticlesList>
+    );
   }
 
   if (error) {

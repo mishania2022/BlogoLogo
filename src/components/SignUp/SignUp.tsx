@@ -1,6 +1,6 @@
 import { SignUpIcon } from "assets";
 import { Link } from "react-router-dom";
-import { ROUTE } from "../../routes";
+import { ROUTE } from "routes";
 import { StyledSignUp } from "./styles";
 
 export const SignUp = () => {

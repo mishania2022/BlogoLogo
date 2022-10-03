@@ -2,7 +2,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import { getFirebaseMessage } from "../../utils/firebaseErrors";
+import { getFirebaseMessage } from "utils/firebaseErrors";
 import { StyledRingLoader } from "../FormSignUp/styles";
 import { Label } from "../Label/Label";
 import { Button, Form, LinkRow, LinkSignIn } from "./styles";

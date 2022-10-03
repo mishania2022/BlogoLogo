@@ -1,6 +1,6 @@
-import { addToFavorites } from "../../store/features/favoritesArticlesSlice/favoritesArticlesSlice";
-import { useAppDispatch } from "../../store/hooks/index";
-import { IArticle } from "../../types";
+import { addToFavorites } from "store/features/favoritesArticlesSlice/favoritesArticlesSlice";
+import { useAppDispatch } from "store/hooks";
+import { IArticle } from "types";
 import { StyledArticle, Image, Description, Date, Title, Button, HeartIconLike } from "./styles";
 
 interface IProps {

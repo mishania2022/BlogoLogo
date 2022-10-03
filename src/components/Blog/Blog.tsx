@@ -1,6 +1,6 @@
 import { addToFavoritesBlog } from "store/features/favoritesBlogsSlice/favoritesBlogsSlice";
-import { useAppDispatch } from "../../store/hooks";
-import { IBlog } from "../../types";
+import { useAppDispatch } from "store/hooks";
+import { IBlog } from "types";
 import {
   StyledBlog,
   Image,

@@ -3,7 +3,7 @@ import { CloseIcon } from "assets";
 import { Link } from "react-router-dom";
 import { removeFavoriteBlog } from "store/features/favoritesBlogsSlice/favoritesBlogsSlice";
 import { getFavoritesBlogs } from "store/selectors/blogFavoritesSelector";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { useAppDispatch, useAppSelector } from "store/hooks";
 import {
   Button,
   Data,

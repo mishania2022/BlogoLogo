@@ -1,9 +1,10 @@
+import { StyledArticlesList, StyledClockLoader } from "components/ArticleList/styles";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { fetchBlogByDetails } from "../../store/features/blogsDetails/blogsDetailsSlice";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { getDetailsBlogs } from "../../store/selectors/blogDetailsSelector";
-import { IBlog } from "../../types";
+import { fetchBlogByDetails } from "store/features/blogsDetails/blogsDetailsSlice";
+import { useAppDispatch, useAppSelector } from "store/hooks";
+import { getDetailsBlogs } from "store/selectors/blogDetailsSelector";
+import { IBlog } from "types";
 import { StyledDetailBlogsPage, Image, NewsSite, Description, Title } from "./styles";
 
 export const DetailsBlogPage = () => {
@@ -17,7 +18,11 @@ export const DetailsBlogPage = () => {
   }, [dispatch, id]);
 
   if (isLoading) {
-    return <div>Loading ...</div>;
+    return (
+      <StyledArticlesList>
+        <StyledClockLoader />
+      </StyledArticlesList>
+    );
   }
 
   if (error) {

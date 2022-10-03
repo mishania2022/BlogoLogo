@@ -1,4 +1,4 @@
-import { ROUTE } from "../../routes";
+import { ROUTE } from "routes";
 import { StyledLink, StyledSignIn } from "./styles";
 
 export const FavoritesArticles = () => {

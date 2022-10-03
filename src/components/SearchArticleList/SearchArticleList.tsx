@@ -2,7 +2,7 @@ import { ChangeEvent, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { fetchSearchArticles } from "store/features/searchArticlesSlice/searchArticlesSlice";
 import { getSearchArticles } from "store/selectors/searchArticleSelectors";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { useAppDispatch, useAppSelector } from "store/hooks";
 import { IArticle } from "../../types";
 import { Article } from "../Article/Article";
 import { StyledArticlesList, StyledClockLoader, StyledEmpty } from "./styles";
