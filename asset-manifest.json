@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/blogologo/static/js/main.64d902f3.js",
+    "main.js": "/blogologo/static/js/main.dc17fdeb.js",
     "static/media/basket.svg": "/blogologo/static/media/basket.592b9e8f65b6acac0ae694ac61725582.svg",
     "static/media/close.svg": "/blogologo/static/media/close.2f6de579804031db373ab5402e5ce5d3.svg",
     "static/media/logo.svg": "/blogologo/static/media/logo.e641a71e47198f0c898b283335a8cf83.svg",
     "static/media/signup.svg": "/blogologo/static/media/signup.6bda1b933a5c2a5d674708ef8349835a.svg",
     "static/media/heart.svg": "/blogologo/static/media/heart.108d4817766eca034c0a6987160bb9af.svg",
     "static/media/signin.svg": "/blogologo/static/media/signin.2aac93ec4f0c6a190353aadc2543e45a.svg",
-    "static/media/search.svg": "/blogologo/static/media/search.7f0947de943e2eef52a15b039a4ae707.svg",
     "index.html": "/blogologo/index.html",
-    "main.64d902f3.js.map": "/blogologo/static/js/main.64d902f3.js.map"
+    "static/media/search.svg": "/blogologo/static/media/search.7f0947de943e2eef52a15b039a4ae707.svg",
+    "main.dc17fdeb.js.map": "/blogologo/static/js/main.dc17fdeb.js.map"
   },
   "entrypoints": [
-    "static/js/main.64d902f3.js"
+    "static/js/main.dc17fdeb.js"
   ]
 }
