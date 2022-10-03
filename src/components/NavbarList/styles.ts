@@ -12,6 +12,9 @@ const StyledNavbarList = styled.ul<setOpen>`
   li {
     padding-right: 20px;
     padding-bottom: 1.5rem;
+    :hover{
+    opacity: 0.7;
+  }
   }
 
   ${Media.SM} {

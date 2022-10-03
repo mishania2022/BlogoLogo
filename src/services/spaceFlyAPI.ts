@@ -41,7 +41,7 @@ class SpaceFlyAPI {
 
   public async getSortArticles(sort: string | null) {
     // eslint-disable-next-line max-len
-    const { data } = await this.ARTICLE_API.get<IArticle[]>(Endpoint.ARTICLES + `?_sort=${sort}`);
+    const { data } = await this.ARTICLE_API.get<IArticle[]>(Endpoint.ARTICLES + `${sort}`);
 
     return data;
   }
@@ -69,7 +69,7 @@ class SpaceFlyAPI {
 
   public async getSortBlogs(sort: string | null) {
     // eslint-disable-next-line max-len
-    const { data } = await this.BLOG_API.get<IBlog[]>(Endpoint.BLOGS + `?_sort=${sort}`);
+    const { data } = await this.BLOG_API.get<IBlog[]>(Endpoint.BLOGS + `${sort}`);
 
     return data;
   }

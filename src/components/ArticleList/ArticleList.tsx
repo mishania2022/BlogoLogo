@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import { fetchSortArticles } from "store/features/sortArticlesSlice/sortArticlesSlice";
 import { getSortArticles } from "store/selectors/sortArticlesSelector";
 import { getSortWord } from "store/selectors/sortWordSelectors";
-import { fetchArticles } from "../../store/features/articlesSlice/articlesSlice";
+import { fetchArticles } from "store/features/articlesSlice/articlesSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { getArticles } from "../../store/selectors/articleSelectors";
-import { IArticle } from "../../types";
+import { getArticles } from "store/selectors/articleSelectors";
+import { IArticle } from "types";
 import { Article } from "../Article/Article";
 import { StyledArticlesList, StyledClockLoader } from "./styles";
 

@@ -41,6 +41,8 @@ const BlogItem = styled.div`
 const Image = styled.img`
   width: 100%;
   height: 208px;
+  object-fit: cover;
+  background: url("https://avatarko.ru/img/kartinka/2/zhivotnye_kot_prikol_ochki_1637.jpg");
   border-radius: 16px;
 `;
 

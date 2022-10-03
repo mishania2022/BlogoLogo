@@ -5,8 +5,9 @@ import { CustomStyles } from "./styles";
 import { useDispatch } from "react-redux";
 
 const options: IOption[] = [
-  { value: "title", label: "Title" },
-  { value: "publishedAt", label: "Date" },
+  { value: "?_sort=title", label: "Title" },
+  { value: "?_sort=publishedAt", label: "Date" },
+  { value: "", label: "Select" },
 ];
 
 export const CustomSelect = () => {

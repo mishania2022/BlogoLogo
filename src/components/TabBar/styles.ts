@@ -26,6 +26,9 @@ const ButtonArticleTab = styled.button<setTab>`
   border-radius: 4px;
   cursor: pointer;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  :hover {
+    opacity: 0.9;
+  }
 `;
 
 const ButtonBlogTab = styled.button<setTab>`
@@ -38,6 +41,9 @@ const ButtonBlogTab = styled.button<setTab>`
   border-radius: 4px;
   cursor: pointer;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  :hover {
+    opacity: 0.9;
+  }
 `;
 
 export { StyledTabBar, ButtonArticleTab, TabGroup, ButtonBlogTab };

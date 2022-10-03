@@ -22,7 +22,7 @@ const Container = styled.cite`
   }
 
   ${Media.SM} {
-    max-width: 272px;
+    max-width: 320px;
   }
 `;
 

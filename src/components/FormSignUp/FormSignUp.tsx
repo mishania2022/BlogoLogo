@@ -1,8 +1,7 @@
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
-import { getFirebaseMessage } from "../../utils/firebaseErrors";
+import { fetchSignInUser } from "store/features/userSlice/userSlice";
+import { useAppDispatch } from "store/hooks";
 import { Label } from "../Label/Label";
 import { Button, Danger, ExtraDanger, Form, LinkRow, LinkSignIn, StyledRingLoader } from "./styles";
 
@@ -11,10 +10,14 @@ type SignUpValues = {
   password: string;
 };
 
-export const FormSignUp = () => {
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate();
+interface IProps {
+  toggleModal: (value: boolean) => void;
+}
+
+export const FormSignUp = ({ toggleModal }: IProps) => {
+  const dispatch = useAppDispatch();
+  const [errorMessage] = useState<string | null>(null);
+  const [isLoading] = useState(false);
 
   const {
     register,
@@ -23,21 +26,14 @@ export const FormSignUp = () => {
     formState: { errors },
   } = useForm<SignUpValues>();
 
-  const onSubmit: SubmitHandler<SignUpValues> = ({ email, password }) => {
-    setIsLoading(true);
-    setErrorMessage(null);
-    const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        navigate("/");
-      })
-      .catch((err) => {
-        setErrorMessage(getFirebaseMessage(err.code));
+  const onSubmit: SubmitHandler<SignUpValues> = (userInfo) => {
+    dispatch(fetchSignInUser(userInfo))
+      .then(() => {
+        toggleModal(true);
       })
       .finally(() => {
-        setIsLoading(true);
+        reset();
       });
-    reset();
   };
 
   return (

@@ -7,16 +7,15 @@ const StyledDetailArticlesPage = styled.div`
 `;
 
 const Image = styled.img`
-  width: 1120px;
   height: 518px;
+  object-fit: cover;
+  background: url("https://avatarko.ru/img/kartinka/2/zhivotnye_kot_prikol_ochki_1637.jpg");
   border-radius: 16px 16px 0 0;
   ${Media.MD} {
-    width: 688px;
     height: 359px;
   }
 
   ${Media.SM} {
-    width: 272px;
     height: 224px;
   }
 `;

@@ -4,14 +4,14 @@ export type FirebaseErrorCode =
   | "auth/wrong-password"
   | "auth/user-not-found";
 
-enum FirebaseError {
+export enum FirebaseError {
   EMAIL_ALREADY_IN_USE = "Its email yet used",
   WRONG_PASSWORD = "Invalid password",
   NOT_FOUND = "User not found, please enter correct email",
   UNKNOWN_ERROR = "unknown error please reload page",
 }
 
-const getFirebaseMessage = (code: FirebaseErrorCode) => {
+const getFirebaseMessage = (code: FirebaseErrorCode): FirebaseError => {
   switch (code) {
     case "auth/email-already-in-use":
       return FirebaseError.EMAIL_ALREADY_IN_USE;

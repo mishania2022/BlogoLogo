@@ -22,6 +22,8 @@ import { SearchBlogsList } from "./SearchBlogList/SearchBlogList";
 import { SearchInput } from "./SearchInput/SearchInput";
 import { Burger } from "./Burger/Burger";
 import { Pagination } from "./Pagination/Pagination";
+import { Modal } from "./Modal/Modal";
+import { Portal } from "./Portal/Portal";
 export {
   Footer,
   MainTemplate,
@@ -46,5 +48,7 @@ export {
   SearchBlogsList,
   SearchInput,
   Burger,
-  Pagination
+  Pagination,
+  Modal,
+  Portal
 };

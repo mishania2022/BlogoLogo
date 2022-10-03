@@ -6,6 +6,7 @@ import { Color } from "../../ui/colors";
 const StyledArticle = styled.li`
   max-width: 352px;
   height: 388px;
+  object-fit: cover;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 16px;
   background-color: ${Color.White};
@@ -26,6 +27,17 @@ const Image = styled.img`
   width: 100%;
   height: 208px;
   border-radius: 16px 16px 0 0;
+
+  :hover {
+    opacity: 0.8;
+  }
+
+  ${Media.MD} {
+    max-width: 328px;
+  }
+  ${Media.SM} {
+    max-width: 272px;
+  }
 `;
 
 const Date = styled.h3`
@@ -80,12 +92,13 @@ const HeartIconLike = styled(HeartIcon)`
   width: 20px;
   fill: red;
   :hover {
-    fill: purple;
+    opacity: 0.8;
   }
   :active,
   :focus {
-    fill: orange;
+    fill: purple;
   }
+  transition: 1s;
 `;
 
 export { StyledArticle, Description, Image, Date, Title, Button, HeartIconLike };

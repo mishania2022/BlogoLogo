@@ -18,14 +18,16 @@ const NewsSite = styled.h1`
 const Image = styled.img`
   max-width: 1120px;
   height: 518px;
+  background: url("https://avatarko.ru/img/kartinka/2/zhivotnye_kot_prikol_ochki_1637.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
   border-radius: 16px 16px 0 0;
   ${Media.MD} {
-    width: 688px;
     height: 359px;
   }
 
   ${Media.SM} {
-    width: 272px;
     height: 224px;
   }
 `;
