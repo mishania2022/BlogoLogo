@@ -2,7 +2,7 @@ import { Color } from "../../ui/colors";
 
 export const CustomStyles = {
   control: () => ({
-    width: "230px",
+    width: "160px",
     display: "flex",
     background: Color.Gray,
     borderRadius: "4px",
