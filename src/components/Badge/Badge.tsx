@@ -10,7 +10,7 @@ export const Badge = ({ userName, userSurname }: IProps) => {
   return (
     <StyledSignIn>
       <StyledLink to={ROUTE.ACCOUNT}>
-        <Title>{userName[0].toUpperCase() + userSurname[0].toUpperCase()}</Title>
+        <Title>{userName.toUpperCase() + userSurname.toUpperCase()}</Title>
       </StyledLink>
     </StyledSignIn>
   );

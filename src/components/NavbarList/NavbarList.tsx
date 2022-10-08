@@ -19,7 +19,7 @@ export const NavbarList = ({ open }: IProps) => {
         <>
           <FavoritesArticles />
           <FavoritesBlogs />
-          <Badge userName={name} userSurname={surname}/>
+          <Badge userName={name[0]} userSurname={surname[0]}/>
         </>
       ) : (
         <Link to={ROUTE.SING_IN}></Link>
