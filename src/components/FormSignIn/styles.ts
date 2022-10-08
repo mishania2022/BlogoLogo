@@ -38,6 +38,6 @@ const LinkRow = styled.p`
   color: ${Color.Secondary};
 `;
 const LinkSignIn = styled(Link)`
-  color: ${Color.White};
+  color: ${Color.Primary};
 `;
 export { Form, Button, Input, LinkSignIn, LinkRow };

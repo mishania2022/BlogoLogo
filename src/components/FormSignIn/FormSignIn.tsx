@@ -1,10 +1,10 @@
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { Input } from "components/Input/Input";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import { getFirebaseMessage } from "utils/firebaseErrors";
+import { fetchSignInUser } from "store/features/userSlice/userSlice";
+import { useAppDispatch, useAppSelector } from "store/hooks";
+import { getUserInfo } from "store/selectors/userSelectors";
 import { StyledRingLoader } from "../FormSignUp/styles";
-import { Label } from "../Label/Label";
 import { Button, Form, LinkRow, LinkSignIn } from "./styles";
 
 type SignInValues = {
@@ -12,66 +12,75 @@ type SignInValues = {
   password: string;
 };
 
+const validateRules = {
+  password: {
+    required: "Password is required !",
+    minLength: {
+      value: 6,
+      message: "Password must be at least 6 characters",
+    },
+    maxLength: {
+      value: 12,
+      message: "Password must be at most 20 characters",
+    },
+  },
+  email: {
+    required: "Email is required !",
+    pattern: {
+      value: /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+      message: "Please enter a valid email",
+    },
+  },
+};
+
 export const FormSignIn = () => {
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const { isPendingAuth, error } = useAppSelector(getUserInfo);
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const {
-    register,
+    control,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<SignInValues>();
+  } = useForm<SignInValues>({ defaultValues: { email: "", password: "" } });
 
-  const onSubmit: SubmitHandler<SignInValues> = ({ email, password }) => {
-    setIsLoading(true);
-    setErrorMessage(null);
-    const auth = getAuth();
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
+  const onSubmit: SubmitHandler<SignInValues> = (userInfo) => {
+    dispatch(fetchSignInUser(userInfo))
+      .then((_) => {
         navigate("/");
       })
-      .catch((err) => {
-        setErrorMessage(getFirebaseMessage(err.code));
-      })
       .finally(() => {
-        setIsLoading(false);
+        reset();
       });
-    reset();
   };
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       Email:
-      <Label
-        type="text"
-        placeholder="Your email"
-        register={{
-          ...register("email", {
-            required: "Email is required",
-          }),
+      <Controller
+        name="email"
+        control={control}
+        rules={validateRules.email}
+        render={({ field: { value, onChange } }) => {
+          return <Input value={value} onChange={onChange} type="text" placeholder="Your email" />;
         }}
       />
       {errors.email && <p className="text-danger">{errors.email.message}</p>}
       Password:
-      <Label
-        type="password"
-        placeholder="Your password"
-        register={{
-          ...register("password", {
-            required: "Password is required",
-            minLength: {
-              value: 6,
-              message: "Password must contain six symbols",
-            },
-          }),
+      <Controller
+        name="password"
+        control={control}
+        rules={validateRules.password}
+        render={({ field: { value, onChange } }) => {
+          return (
+            <Input value={value} onChange={onChange} type="password" placeholder="Your password" />
+          );
         }}
       />
       {errors.password && <p className="text-danger">{errors.password.message}</p>}
-      <Link to="/sign-up" >Forgot password?</Link>
-      {errorMessage && <p className="text-danger font-bold">{errorMessage}</p>}
-      <Button type="submit">Sign In {isLoading && <StyledRingLoader color="#ffffff" />}</Button>
+      <Link to="/sign-up">Forgot password?</Link>
+      <Button type="submit">Sign In {isPendingAuth && <StyledRingLoader color="#ffffff" />}</Button>
       <LinkRow>
         Don`t have an account? <LinkSignIn to="/sign-up">Sign Up</LinkSignIn>
       </LinkRow>

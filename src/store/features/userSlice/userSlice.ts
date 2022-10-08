@@ -47,21 +47,19 @@ export const fetchSignUpUser = createAsyncThunk<
 );
 
 export const fetchSignInUser = createAsyncThunk<
-  { creationTime: string; userEmail: string; name: string; surname: string },
-  { email: string; password: string; userName: string; userSurname: string },
+  { creationTime: string; userEmail: string },
+  { email: string; password: string },
   { rejectValue: FirebaseError }
 >(
   "user/fetchSignInUser",
-  async ({ email, password, userName, userSurname }, { rejectWithValue }) => {
+  async ({ email, password }, { rejectWithValue }) => {
     try {
       const auth = getAuth();
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const creationTime = userCredential.user.metadata.creationTime as string;
       const userEmail = userCredential.user.email as string;
-      const name = userName as string;
-      const surname = userSurname as string;
-
-      return { creationTime, userEmail, name, surname };
+      
+      return { creationTime, userEmail };
     } catch (error) {
       const firebaseError = error as { code: FirebaseErrorCode };
 
@@ -126,14 +124,13 @@ const userSlice = createSlice({
       state.email = payload.userEmail;
       state.creationTime = payload.creationTime;
       state.isAuth = true;
-      state.name = payload.name;
-      state.surname = payload.surname;
+      
     });
     builder.addCase(fetchSignInUser.rejected, (state, { payload }) => {
       if (payload) {
         state.isPendingAuth = false;
         state.error = payload;
-        state.isAuth = false;
+        state.isAuth = true;
       }
     });
     builder.addCase(fetchSignOut.pending, (state) => {
