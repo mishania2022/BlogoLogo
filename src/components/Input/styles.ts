@@ -10,7 +10,7 @@ const StyledInput = styled.input`
   line-height: 20px;
   background-color: #ffffff;
   border: 1px solid ${Color.Gray};
-  color: ${Color.Medium};
+  color: #000000;
 `;
 
 export { StyledInput };
