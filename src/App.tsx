@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { MainTemplate, RequireAuth } from "./components";
 import {
+  Account,
   DetailArticlesPage,
   DetailsBlogPage,
   FavoritesArticlesPage,
@@ -24,6 +25,7 @@ export const App = () => {
         <Route element={<RequireAuth />}>
           <Route path={ROUTE.FAVORITES_ARTICLES} element={<FavoritesArticlesPage />} />
           <Route path={ROUTE.FAVORITES_BLOGS} element={<FavoritesBlogsPage />} />
+          <Route path={ROUTE.ACCOUNT} element={<Account />} />
         </Route>
         <Route path={ROUTE.SING_IN} element={<SignInPage />} />
         <Route path={ROUTE.SIGN_UP} element={<SignUpPage />} />

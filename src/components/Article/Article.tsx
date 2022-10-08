@@ -1,6 +1,7 @@
 import { addToFavorites } from "store/features/favoritesArticlesSlice/favoritesArticlesSlice";
 import { useAppDispatch } from "store/hooks";
 import { IArticle } from "types";
+import { getDate } from "utils/getDate";
 import { StyledArticle, Image, Description, Date, Title, Button, HeartIconLike } from "./styles";
 
 interface IProps {
@@ -15,10 +16,7 @@ export const Article = ({ article }: IProps) => {
       <Image src={article.imageUrl} alt="image" />
       <Description>
         <Date>
-          {article.publishedAt.substring(8, 10) + "."
-            +article.publishedAt.substring(5, 7) + "."
-            +article.publishedAt.substring(0, 4) + " "
-            +article.publishedAt.substring(11, 19)}
+          {getDate(article.updatedAt)}
         </Date>
         <Title>{article.title}</Title>
         <Button

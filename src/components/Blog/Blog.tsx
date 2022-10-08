@@ -1,6 +1,7 @@
 import { addToFavoritesBlog } from "store/features/favoritesBlogsSlice/favoritesBlogsSlice";
 import { useAppDispatch } from "store/hooks";
 import { IBlog } from "types";
+import { getDate } from "utils/getDate";
 import {
   StyledBlog,
   Image,
@@ -21,10 +22,7 @@ export const Blog = ({ blog }: IProps) => {
     <StyledBlog>
       <Image src={blog.imageUrl} />
       <Description>
-        <Date>{blog.publishedAt.substring(8, 10) + "."
-            +blog.publishedAt.substring(5, 7) + "."
-            +blog.publishedAt.substring(0, 4) + " "
-            +blog.publishedAt.substring(11, 19)}</Date>
+        <Date>{getDate(blog.updatedAt)}</Date>
         <Title>{blog.title}</Title>
         <Button
           onClick={(event) => {

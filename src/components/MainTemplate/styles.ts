@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import { Color } from "ui/colors";
 import { Media } from "../../ui/breakepoints";
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  background: inherit;
+  background: ${Color.White};
 `;
 
 const Container = styled.cite`

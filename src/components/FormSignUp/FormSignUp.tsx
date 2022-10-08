@@ -1,13 +1,71 @@
-import { useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { fetchSignInUser } from "store/features/userSlice/userSlice";
-import { useAppDispatch } from "store/hooks";
-import { Label } from "../Label/Label";
-import { Button, Danger, ExtraDanger, Form, LinkRow, LinkSignIn, StyledRingLoader } from "./styles";
+import { Input } from "components";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import { fetchSignUpUser } from "store/features/userSlice/userSlice";
+import { useAppDispatch, useAppSelector } from "store/hooks";
+import { getUserInfo } from "store/selectors/userSelectors";
+import {
+  Button,
+  Danger,
+  ExtraDanger,
+  StyledForm,
+  LinkRow,
+  LinkSignIn,
+  StyledRingLoader,
+  Title,
+} from "./styles";
 
 type SignUpValues = {
+  userName: string;
+  userSurname: string;
   email: string;
   password: string;
+  confirmPassword: string;
+};
+
+const validateRules = {
+  name: {
+    required: "Name is required !",
+    pattern: {
+      value: /[A-Za-z]/,
+      message: "Name must contain only letters",
+    },
+  },
+  surname: {
+    required: "Name is required !",
+    pattern: {
+      value: /[A-Za-z]/,
+      message: "Name must contain only letters",
+    },
+  },
+  password: {
+    required: "Password is required !",
+    minLength: {
+      value: 6,
+      message: "Password must be at least 6 characters",
+    },
+    maxLength: {
+      value: 12,
+      message: "Password must be at most 12 characters",
+    },
+  },
+  confirmPassword: {
+    required: "Password is required",
+    minLength: {
+      value: 6,
+      message: "Password must have 6 symbols",
+    },
+    maxLength: {
+      value: 12,
+      message: "Password must be at most 12 characters",
+    },
+  },
+  email: {
+    required: "Email is required !",
+    pattern: {
+      value: /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+      message: "Please enter a valid email",
+    },
+  },
 };
 
 interface IProps {
@@ -15,20 +73,20 @@ interface IProps {
 }
 
 export const FormSignUp = ({ toggleModal }: IProps) => {
+  const { isPendingAuth, error } = useAppSelector(getUserInfo);
   const dispatch = useAppDispatch();
-  const [isLoading, setIsLoading] = useState(false);
-  const [errorMessage] = useState<string | null>(null);
-  
+
   const {
-    register,
     handleSubmit,
+    control,
     reset,
     formState: { errors },
-  } = useForm<SignUpValues>();
+  } = useForm<SignUpValues>({
+    defaultValues: { email: "", password: "", userName: "", userSurname: "" },
+  });
 
   const onSubmit: SubmitHandler<SignUpValues> = (userInfo) => {
-    setIsLoading(true);
-    dispatch(fetchSignInUser(userInfo))
+    dispatch(fetchSignUpUser(userInfo))
       .then(() => {
         toggleModal(true);
       })
@@ -38,39 +96,70 @@ export const FormSignUp = ({ toggleModal }: IProps) => {
   };
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
-      Email:
-      <Label
-        type="text"
-        placeholder="Your email"
-        register={{
-          ...register("email", {
-            required: "Email is required",
-          }),
+    <StyledForm onSubmit={handleSubmit(onSubmit)}>
+      <Title>Name:</Title>
+      <Controller
+        name="userName"
+        control={control}
+        rules={validateRules.name}
+        render={({ field: { value, onChange } }) => {
+          return <Input onChange={onChange} value={value} placeholder="Your name" type="text" />;
+        }}
+      />
+      {errors.userName && <Danger>{errors.userName.message}</Danger>}
+      <Title>Surname:</Title>
+      <Controller
+        name="userSurname"
+        control={control}
+        rules={validateRules.surname}
+        render={({ field: { value, onChange } }) => {
+          return <Input onChange={onChange} value={value} placeholder="Your surname" type="text" />;
+        }}
+      />
+      {errors.userSurname && <Danger>{errors.userSurname.message}</Danger>}
+      <Title>Email:</Title>
+      <Controller
+        name="email"
+        control={control}
+        rules={validateRules.email}
+        render={({ field: { onChange, value } }) => {
+          return <Input type="text" onChange={onChange} value={value} placeholder="Your email" />;
         }}
       />
       {errors.email && <Danger>{errors.email.message}</Danger>}
-      Password:
-      <Label
-        type="password"
-        placeholder="Your password"
-        register={{
-          ...register("password", {
-            required: "Password is required",
-            minLength: {
-              value: 6,
-              message: "Password must contain six symbols",
-            },
-          }),
+      <Title>Password:</Title>
+      <Controller
+        name="password"
+        control={control}
+        rules={validateRules.password}
+        render={({ field: { onChange, value } }) => {
+          return (
+            <Input onChange={onChange} type="password" placeholder="Your password" value={value} />
+          );
         }}
       />
       {errors.password && <Danger>{errors.password.message}</Danger>}
-      {errorMessage && <ExtraDanger>{errorMessage}</ExtraDanger>}
+      <Title>Confirm Password</Title>
+      <Controller
+        control={control}
+        name="confirmPassword"
+        rules={validateRules.confirmPassword}
+        render={({ field: { onChange, value } }) => (
+          <Input
+            onChange={onChange}
+            value={value}
+            placeholder="Confirm Your password"
+            type="password"
+          />
+        )}
+      />
+      {errors.confirmPassword && <ExtraDanger>{errors.confirmPassword.message}</ExtraDanger>}
       <br></br>
-      <Button type="submit">Sign Up {isLoading && <StyledRingLoader color="#d3d636" />}</Button>
+      {error && <Danger>{error}</Danger>}
+      <Button type="submit">Sign Up {isPendingAuth && <StyledRingLoader color="#d3d636" />}</Button>
       <LinkRow>
         Already have an account? <LinkSignIn to="/sign-in">Sign in</LinkSignIn>
       </LinkRow>
-    </Form>
+    </StyledForm>
   );
 };

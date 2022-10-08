@@ -49,16 +49,14 @@ const Image = styled.img`
 const Data = styled.h3`
   font-weight: 500;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 20px;
   color: ${Color.Secondary};
   margin-bottom: 5px;
   ${Media.MD} {
-  }
-  ${Media.SM} {
     text-align: justify;
     font-weight: 300;
-    font-size: 10px;
-    line-height: 12px;
+    font-size: 12px;
+    line-height: 14px;
   }
 `;
 
@@ -66,15 +64,13 @@ const Title = styled.h2`
   text-align: center;
   font-weight: 600;
   font-size: 18px;
-  line-height: 28px;
+  line-height: 22px;
   color: ${Color.Medium};
   ${Media.MD} {
-  }
-  ${Media.SM} {
     text-align: justify;
     font-weight: 300;
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 14px;
+    line-height: 16px;
   }
 `;
 const Description = styled.div`

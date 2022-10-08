@@ -6,7 +6,7 @@ import { Color } from "ui/colors";
 const StyledSignIn = styled.li``;
 
 const StyledLink = styled(Link)`
-  color: black;
+  color: ${Color.Secondary};
   ${Media.SM} {
     color: ${Color.White};
   }

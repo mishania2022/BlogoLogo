@@ -10,7 +10,7 @@ const StyledNavbar = styled.nav`
   right: 0;
   z-index: 3;
   margin-bottom: 80px;
-  padding: 20px 32px;
+  padding: 40px 32px;
   justify-content: space-between;
   background: ${Color.White};
 `;

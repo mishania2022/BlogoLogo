@@ -14,6 +14,7 @@ import {
   Image,
   BlogItem,
 } from "./styles";
+import { getDate } from "utils/getDate";
 
 export const FavoritesBlogsPage = () => {
   const dispatch = useAppDispatch();
@@ -26,8 +27,8 @@ export const FavoritesBlogsPage = () => {
             <BlogItem>
               <Description>
                 <NewsSite>NewsSite: {blog.newsSite}</NewsSite>
-                <Image src={blog.imageUrl} alt="image" />
-                <Data>Data: {blog.publishedAt}</Data>
+                <Image src={blog.imageUrl} alt={blog.title} />
+                <Data>Data: {getDate(blog.updatedAt)}</Data>
                 <Title>Title: {blog.title}</Title>
                 <Button
                   onClick={(event) => {

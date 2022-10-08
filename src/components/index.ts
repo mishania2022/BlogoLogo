@@ -11,6 +11,7 @@ import { FormSignUp } from "./FormSignUp/FormSignUp";
 import { SearchIcon } from "./SearchIcon/SearchIcon";
 import { SignIn } from "./SignIn/SignIn";
 import { SignUp } from "./SignUp/SignUp";
+import { Input } from "./Input/Input";
 import { NavbarList } from "./NavbarList/NavbarList";
 import { TabBar } from "./TabBar/TabBar";
 import { CustomSelect } from "./CustomSelect/CustomSelect";
@@ -24,6 +25,7 @@ import { Burger } from "./Burger/Burger";
 import { Pagination } from "./Pagination/Pagination";
 import { Modal } from "./Modal/Modal";
 import { Portal } from "./Portal/Portal";
+import { Badge } from "./Badge/Badge";
 export {
   Footer,
   MainTemplate,
@@ -39,6 +41,7 @@ export {
   SearchIcon,
   SignIn,
   SignUp,
+  Input,
   TabBar,
   CustomSelect,
   FavoritesArticles,
@@ -50,5 +53,6 @@ export {
   Burger,
   Pagination,
   Modal,
-  Portal
+  Portal,
+  Badge,
 };

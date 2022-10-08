@@ -9,4 +9,5 @@ export enum ROUTE {
     NOT_FOUND = "*",
     BLOG_DETAILS = "/blogs/:id",
     ARTICLE_DETAILS = "/articles/:id",
+    ACCOUNT = "/account",
   }

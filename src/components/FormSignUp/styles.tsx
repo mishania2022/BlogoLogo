@@ -3,13 +3,23 @@ import { Color } from "../../ui/colors";
 import { RingLoader } from "react-spinners";
 import { Link } from "react-router-dom";
 
-const Form = styled.form`
+const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   width: 624px;
   margin-top: 100px;
   padding: 40px;
-  gap: 15px;
+  gap: 10px;
+  border-radius: 16px;
+  background-color: ${Color.White};
+`;
+
+const Title = styled.h2`
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: ${Color.Medium};
 `;
 
 const Button = styled.button`
@@ -47,4 +57,4 @@ const LinkRow = styled.p`
 const LinkSignIn = styled(Link)`
   color: ${Color.Primary};
 `;
-export { Form, Button, Danger, ExtraDanger, StyledRingLoader, LinkSignIn, LinkRow };
+export { StyledForm, Title, Button, Danger, ExtraDanger, StyledRingLoader, LinkSignIn, LinkRow };

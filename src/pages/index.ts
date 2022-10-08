@@ -7,6 +7,7 @@ import { SignInPage } from "./SignInPage/SignInPage";
 import { SignUpPage } from "./SignUpPage/SignUpPage";
 import { DetailArticlesPage } from "./DetailArticlesPage/DetailArticlesPage";
 import { DetailsBlogPage } from "./DetailsBlogPage/DetailsBlogPage";
+import { Account } from "./Account/Account";
 
 export {
   FavoritesArticlesPage,
@@ -18,4 +19,5 @@ export {
   SignUpPage,
   DetailArticlesPage,
   DetailsBlogPage,
+  Account,
 };

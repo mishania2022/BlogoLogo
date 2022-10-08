@@ -71,7 +71,7 @@ export const FormSignIn = () => {
       {errors.password && <p className="text-danger">{errors.password.message}</p>}
       <Link to="/sign-up" >Forgot password?</Link>
       {errorMessage && <p className="text-danger font-bold">{errorMessage}</p>}
-      <Button type="submit">Sign In {isLoading && <StyledRingLoader color="#d3d636" />}</Button>
+      <Button type="submit">Sign In {isLoading && <StyledRingLoader color="#ffffff" />}</Button>
       <LinkRow>
         Don`t have an account? <LinkSignIn to="/sign-up">Sign Up</LinkSignIn>
       </LinkRow>

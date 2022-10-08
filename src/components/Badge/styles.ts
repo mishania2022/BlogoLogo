@@ -3,9 +3,6 @@ import styled from "styled-components";
 import { Media } from "ui/breakepoints";
 import { Color } from "ui/colors";
 
-const StyledSignIn = styled.li`
-  color: black;
-`;
 const StyledLink = styled(Link)`
   color: ${Color.Secondary};
   ${Media.SM} {
@@ -13,4 +10,15 @@ const StyledLink = styled(Link)`
   }
 `;
 
-export { StyledSignIn, StyledLink };
+const StyledSignIn = styled.li`
+  color: ${Color.Secondary};
+`;
+
+const Title = styled.h3`
+  padding: 15px;
+  border-radius: 10px;
+  background-color: ${Color.Primary};
+  color: #ffffff;
+`;
+
+export { StyledLink, Title, StyledSignIn };

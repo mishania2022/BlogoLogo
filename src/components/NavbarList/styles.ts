@@ -8,20 +8,26 @@ const StyledNavbarList = styled.ul<setOpen>`
   display: flex;
   flex-flow: row nowrap;
   justify-content: around-between;
-  padding-top: 10px;
+  align-items: center;
   li {
+    margin-top: 80px;
     padding-right: 20px;
     padding-bottom: 1.5rem;
-    :hover{
-    opacity: 0.7;
-  }
+    :hover {
+      opacity: 0.7;
+    }
+
+    ${Media.SM} {
+      margin-top: 20px;
+      padding-bottom: 0.5rem;
+    }
   }
 
   ${Media.SM} {
     flex-flow: column nowrap;
     background-color: ${Color.PrimaryLight};
     position: fixed;
-    transform: ${({ open }) => open ? "translateX(0)" : "translateX(100%)"};
+    transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
     top: 0;
     right: 0;
     height: 200vh;

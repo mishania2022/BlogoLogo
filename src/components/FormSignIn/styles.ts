@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Color } from "../../ui/colors";
+import { Color } from "ui/colors";
 
 const Form = styled.form`
   display: flex;
@@ -35,9 +35,9 @@ const LinkRow = styled.p`
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
-  color: #8d8e97;
+  color: ${Color.Secondary};
 `;
 const LinkSignIn = styled(Link)`
-  color: ${Color.Primary};
+  color: ${Color.White};
 `;
 export { Form, Button, Input, LinkSignIn, LinkRow };

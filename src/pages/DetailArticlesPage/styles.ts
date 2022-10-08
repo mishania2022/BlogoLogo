@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Color } from "ui/colors";
 import { Media } from "../../ui/breakepoints";
 
 const StyledDetailArticlesPage = styled.div`
@@ -27,6 +28,7 @@ const NewsSite = styled.h1`
   font-size: 56px;
   line-height: 80px;
   text-align: center;
+  color: ${Color.Secondary}
 `;
 
 const Title = styled.h2`
@@ -38,6 +40,7 @@ const Title = styled.h2`
   font-size: 24px;
   line-height: 32px;
   text-align: center;
+  color: ${Color.Secondary}
 `;
 
 const Description = styled.h2`
@@ -47,6 +50,7 @@ const Description = styled.h2`
   font-size: 18px;
   line-height: 32px;
   text-align: justify;
+  color: ${Color.Secondary}
 `;
 
 export { StyledDetailArticlesPage, Image, NewsSite, Title, Description };

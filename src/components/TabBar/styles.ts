@@ -7,7 +7,7 @@ const StyledTabBar = styled.div`
   margin-top: 40px;
   margin-bottom: 64px;
   padding-bottom: 15px;
-  border-bottom: 1px solid ${Color.Light};
+  border-bottom: 1px solid ${Color.Secondary};
 `;
 
 const TabGroup = styled.div`
@@ -24,6 +24,7 @@ const ButtonArticleTab = styled.button<setTab>`
   background: ${({ active }) => (active === false ? Color.Primary : Color.Gray)};
   border: none;
   border-radius: 4px;
+  color: ${Color.Secondary};
   cursor: pointer;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   :hover {
@@ -39,6 +40,7 @@ const ButtonBlogTab = styled.button<setTab>`
   background: ${({ active }) => (active === true ? Color.Primary : Color.Gray)};
   border: none;
   border-radius: 4px;
+  color: ${Color.Secondary};
   cursor: pointer;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   :hover {

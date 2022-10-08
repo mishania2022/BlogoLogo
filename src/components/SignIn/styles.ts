@@ -1,7 +1,8 @@
 import { SignInIcon } from "assets";
 import styled from "styled-components";
+import { Color } from "ui/colors";
 const StyledSignIn = styled.li`
-  color: black;
+  color: ${Color.Secondary};
 `;
 
 const StyledSignInIcon = styled(SignInIcon)`

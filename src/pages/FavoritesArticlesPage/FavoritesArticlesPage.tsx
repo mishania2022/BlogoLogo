@@ -14,6 +14,7 @@ import {
   Image,
   NewsSite,
 } from "./styles";
+import { getDate } from "utils/getDate";
 
 export const FavoritesArticlesPage = () => {
   const dispatch = useAppDispatch();
@@ -26,8 +27,8 @@ export const FavoritesArticlesPage = () => {
             <ArticleItem>
               <Description>
                 <NewsSite>NewsSite: {article.newsSite}</NewsSite>
-                <Image src={article.imageUrl} alt="image" />
-                <Data>Data: {article.publishedAt}</Data>
+                <Image src={article.imageUrl} alt={article.title} />
+                <Data>Data: {getDate(article.updatedAt)}</Data>
                 <Title>Title: {article.title}</Title>
                 <Button
                   onClick={(event) => {

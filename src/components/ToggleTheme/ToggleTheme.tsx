@@ -1,10 +1,8 @@
-import { useState } from "react";
+import { useTheme } from "hooks/useTheme";
 import { Button } from "./styles";
 
 export const ToggleTheme = () => {
-  const [theme, setTheme] = useState<"dark" | "light">("light");
-  const root = document.getElementById("root") as HTMLElement;
-  root.setAttribute("data-theme", theme);
+  const { theme, setTheme } = useTheme();
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
@@ -12,7 +10,7 @@ export const ToggleTheme = () => {
 
   return (
     <Button type="button" onClick={toggleTheme} isTheme={theme}>
-      {theme === "light" ? "set dark" : "set light"}
+      {theme === "light" ? "dark" : "light"}
     </Button>
   );
 };
