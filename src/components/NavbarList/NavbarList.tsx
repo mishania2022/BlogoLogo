@@ -20,8 +20,8 @@ export const NavbarList = ({ open }: IProps) => {
           <FavoritesArticles />
           <FavoritesBlogs />
           <Badge
-            userName={name[0] ? name[0] : name}
-            userSurname={surname[0] ? surname[0] : surname}
+            userName={name === "" ? name : name[0]}
+            userSurname={surname === "" ? surname : surname[0]}
           />
         </>
       ) : (
