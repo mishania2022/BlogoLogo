@@ -27,6 +27,18 @@ const fetchSortArticles = createAsyncThunk<IArticle[], string | null, { rejectVa
   },
 );
 
+const fetchSortArticlesByPage = createAsyncThunk<IArticle[], number, { rejectValue: string }>(
+  "sortArticles/fetchSortArticlesByPage",
+  async (page, { rejectWithValue }) => {
+    try {
+      return await spaceFlyAPI.getSortArticlesByPage(page);
+    } catch (error) {
+      const AxiosError = error as AxiosError;
+      return rejectWithValue(AxiosError.message);
+    }
+  },
+);
+
 const sortArticlesSlice = createSlice({
   name: "sortArticles",
   initialState,
@@ -46,8 +58,22 @@ const sortArticlesSlice = createSlice({
         state.error = payload;
       }
     });
+    builder.addCase(fetchSortArticlesByPage.pending, (state) => {
+      state.isLoading = true;
+      state.error = null;
+    });
+    builder.addCase(fetchSortArticlesByPage.fulfilled, (state, { payload }) => {
+      state.isLoading = false;
+      state.sortArticles = payload;
+    });
+    builder.addCase(fetchSortArticlesByPage.rejected, (state, { payload }) => {
+      if (payload) {
+        state.isLoading = false;
+        state.error = payload;
+      }
+    });
   },
 });
 
 export default sortArticlesSlice.reducer;
-export { fetchSortArticles };
+export { fetchSortArticles, fetchSortArticlesByPage };

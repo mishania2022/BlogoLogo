@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { HeartIcon } from "../../assets";
-import { Media } from "../../ui/breakepoints";
-import { Color } from "../../ui/colors";
+import { HeartIcon } from "assets";
+import { Media } from "ui/breakepoints";
+import { Color } from "ui/colors";
 
 const StyledArticle = styled.li`
   max-width: 352px;
@@ -26,7 +26,11 @@ const StyledArticle = styled.li`
 const Image = styled.img`
   width: 100%;
   height: 208px;
+  object-fit: cover;
   border-radius: 16px 16px 0 0;
+  background: url("https://avatarko.ru/img/kartinka/2/zhivotnye_kot_prikol_ochki_1637.jpg");
+  background-position: center;
+  background: no-repeat;
 
   :hover {
     opacity: 0.8;

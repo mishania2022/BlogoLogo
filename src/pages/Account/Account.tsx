@@ -23,7 +23,11 @@ export const Account = () => {
   };
 
   return (
-    <StyledAccount>
+    <StyledAccount
+      animate={{ x: 0, y: 0 }}
+      initial={{ x: -500, y: -500 }}
+      transition={{ delay: 0.5, duration: 0.5 }}
+    >
       <Container>
         <Title>Account</Title>
         <Name>Name: {name}</Name>

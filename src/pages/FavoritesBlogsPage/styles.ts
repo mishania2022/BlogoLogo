@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { BasketIcon } from "../../assets";
 import { Media } from "../../ui/breakepoints";
 import { Color } from "../../ui/colors";
 
@@ -91,24 +90,5 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const StyledBasket = styled(BasketIcon)`
-  :hover {
-    fill: ${Color.Secondary};
-  }
-  :active {
-    fill: ${Color.PrimaryLight};
-  }
-`;
-
 // eslint-disable-next-line max-len
-export {
-  StyledFavoritesPage,
-  Button,
-  StyledBasket,
-  Title,
-  Description,
-  Data,
-  Image,
-  BlogItem,
-  NewsSite,
-};
+export { StyledFavoritesPage, Button, Title, Description, Data, Image, BlogItem, NewsSite };

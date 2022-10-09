@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ClockLoader } from "react-spinners";
+import { PuffLoader } from "react-spinners";
 import { Media } from "../../ui/breakepoints";
 
 const StyledArticlesList = styled.ul`
@@ -22,11 +22,12 @@ const StyledArticlesList = styled.ul`
   }
 `;
 
-const StyledClockLoader = styled(ClockLoader)`
+const StyledClockLoader = styled(PuffLoader)`
   width: 1120px;
   grid-column-start: 2;
   margin: 0 auto;
   margin: 300px 300px;
+  color: "#b211bb";
   ${Media.MD} {
     grid-column-start: 2;
   }

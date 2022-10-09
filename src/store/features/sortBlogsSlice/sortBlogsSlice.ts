@@ -27,6 +27,18 @@ const fetchSortBlogs = createAsyncThunk<IBlog[], string | null, { rejectValue: s
   },
 );
 
+const fetchSortBlogsByPage = createAsyncThunk<IBlog[], number, { rejectValue: string }>(
+  "sortBlogs/fetchSortBlogsByPage",
+  async (page, { rejectWithValue }) => {
+    try {
+      return await spaceFlyAPI.getSortBlogsByPage(page);
+    } catch (error) {
+      const AxiosError = error as AxiosError;
+      return rejectWithValue(AxiosError.message);
+    }
+  },
+);
+
 const sortBlogsSlice = createSlice({
   name: "sortBlogs",
   initialState,
@@ -46,8 +58,22 @@ const sortBlogsSlice = createSlice({
         state.error = payload;
       }
     });
+    builder.addCase(fetchSortBlogsByPage.pending, (state) => {
+      state.isLoading = true;
+      state.error = null;
+    });
+    builder.addCase(fetchSortBlogsByPage.fulfilled, (state, { payload }) => {
+      state.isLoading = false;
+      state.sortBlogs = payload;
+    });
+    builder.addCase(fetchSortBlogsByPage.rejected, (state, { payload }) => {
+      if (payload) {
+        state.isLoading = false;
+        state.error = payload;
+      }
+    });
   },
 });
 
 export default sortBlogsSlice.reducer;
-export { fetchSortBlogs };
+export { fetchSortBlogs, fetchSortBlogsByPage };

@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 import styled from "styled-components";
-import { HeartIcon } from "../../assets";
-import { Media } from "../../ui/breakepoints";
-import { Color } from "../../ui/colors";
+import { HeartIcon } from "assets";
+import { Media } from "ui/breakepoints";
+import { Color } from "ui/colors";
 
 const StyledBlog = styled.li`
   height: 388px;

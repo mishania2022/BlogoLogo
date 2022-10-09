@@ -17,6 +17,13 @@ export const Button = styled.button<setTheme>`
   transition: all 0.3s;
   background-color: ${({ isTheme }) => (isTheme === "light" ? Color.Primary : Color.Gray)};
   transition: all 0.3s;
+  cursor: pointer;
+  :hover {
+    opacity: 0.8;
+  }
+  :active {
+    background: ${Color.PrimaryLight};
+  }
 
   ${Media.MD} {
     height: 45px;

@@ -34,7 +34,7 @@ const validateRules = {
 };
 
 export const FormSignIn = () => {
-  const { isPendingAuth, error } = useAppSelector(getUserInfo);
+  const { isPendingAuth } = useAppSelector(getUserInfo);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 

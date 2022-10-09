@@ -19,7 +19,7 @@ class SpaceFlyAPI {
   });
 
   public async getAllArticles() {
-    const { data } = await this.ARTICLE_API.get<IArticle[]>(Endpoint.ARTICLES + "?_limit=12");
+    const { data } = await this.ARTICLE_API.get<IArticle[]>(Endpoint.ARTICLES_LIMIT);
 
     return data;
   }
@@ -31,10 +31,11 @@ class SpaceFlyAPI {
   }
 
   public async getSearchArticles(word: string) {
+    const params = {
+      title_contains: word,
+    };
     // eslint-disable-next-line max-len
-    const { data } = await this.ARTICLE_API.get<IArticle[]>(
-      Endpoint.ARTICLES + `?title_contains=${word}`,
-    );
+    const { data } = await this.ARTICLE_API.get<IArticle[]>(Endpoint.ARTICLES_LIMIT, { params });
 
     return data;
   }
@@ -51,7 +52,7 @@ class SpaceFlyAPI {
   });
 
   public async getAllBlogs() {
-    const { data } = await this.BLOG_API.get<IBlog[]>(Endpoint.BLOGS + "?_limit=12&_start=9");
+    const { data } = await this.BLOG_API.get<IBlog[]>(Endpoint.BLOGS_LIMIT);
 
     return data;
   }
@@ -61,8 +62,11 @@ class SpaceFlyAPI {
     return data;
   }
   public async getSearchBlogs(word: string) {
+    const params = {
+      title_contains: word,
+    };
     // eslint-disable-next-line max-len
-    const { data } = await this.BLOG_API.get<IBlog[]>(Endpoint.BLOGS + `?title_contains=${word}`);
+    const { data } = await this.BLOG_API.get<IBlog[]>(Endpoint.BLOGS_LIMIT, { params });
 
     return data;
   }
@@ -80,6 +84,26 @@ class SpaceFlyAPI {
     };
 
     const { data } = await this.ARTICLE_API.get<IArticle[]>(Endpoint.ARTICLES_LIMIT, { params });
+
+    return data;
+  }
+
+  public async getSortArticlesByPage(page: number) {
+    const params = {
+      _start: page,
+    };
+
+    const { data } = await this.ARTICLE_API.get<IArticle[]>(Endpoint.ARTICLES_LIMIT, { params });
+
+    return data;
+  }
+
+  public async getSortBlogsByPage(page: number) {
+    const params = {
+      _start: page,
+    };
+
+    const { data } = await this.BLOG_API.get<IBlog[]>(Endpoint.BLOGS_LIMIT, { params });
 
     return data;
   }

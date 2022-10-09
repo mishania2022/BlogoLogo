@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { Color } from "ui/colors";
 import { Media } from "ui/breakepoints";
+import { motion } from "framer-motion";
 
-const StyledAccount = styled.div`
+const StyledAccount = styled(motion.div)`
   margin-top: 80px;
   min-height: 100vh;
 `;
@@ -25,6 +26,7 @@ const Container = styled.div`
   justify-content: space-around;
   margin: 0 auto;
   padding: 20px 20px;
+  gap: 20px;
   width: 800px;
   height: 300px;
   border-radius: 16px;
