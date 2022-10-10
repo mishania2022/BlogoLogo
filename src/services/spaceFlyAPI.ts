@@ -41,8 +41,11 @@ class SpaceFlyAPI {
   }
 
   public async getSortArticles(sort: string | null) {
+    const params = {
+      _sort: sort,
+    };
     // eslint-disable-next-line max-len
-    const { data } = await this.ARTICLE_API.get<IArticle[]>(Endpoint.ARTICLES + `${sort}`);
+    const { data } = await this.ARTICLE_API.get<IArticle[]>(Endpoint.ARTICLES_LIMIT, { params });
 
     return data;
   }
@@ -72,8 +75,11 @@ class SpaceFlyAPI {
   }
 
   public async getSortBlogs(sort: string | null) {
+    const params = {
+      _sort: sort,
+    };
     // eslint-disable-next-line max-len
-    const { data } = await this.BLOG_API.get<IBlog[]>(Endpoint.BLOGS + `${sort}`);
+    const { data } = await this.BLOG_API.get<IBlog[]>(Endpoint.BLOGS_LIMIT, { params });
 
     return data;
   }
