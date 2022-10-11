@@ -12,12 +12,10 @@ export const Article = ({ article }: IProps) => {
   const dispatch = useAppDispatch();
 
   return (
-    <StyledArticle>
+    <StyledArticle initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: false }}>
       <Image src={article.imageUrl} alt="image" />
       <Description>
-        <Date>
-          {getDate(article.updatedAt)}
-        </Date>
+        <Date>{getDate(article.updatedAt)}</Date>
         <Title>{article.title}</Title>
         <Button
           onClick={(event) => {

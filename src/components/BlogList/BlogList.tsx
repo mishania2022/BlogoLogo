@@ -38,7 +38,7 @@ export const BlogList = () => {
   }
 
   return (
-    <StyledBlogList>
+    <StyledBlogList >
       {sortBlogs.length === 0
         ? blogs.map((blog: IBlog) => {
           return (

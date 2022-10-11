@@ -2,8 +2,9 @@ import styled from "styled-components";
 import { HeartIcon } from "assets";
 import { Media } from "ui/breakepoints";
 import { Color } from "ui/colors";
+import { motion } from "framer-motion";
 
-const StyledArticle = styled.li`
+const StyledArticle = styled(motion.li)`
   max-width: 352px;
   height: 388px;
   object-fit: cover;

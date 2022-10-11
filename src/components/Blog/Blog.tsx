@@ -2,15 +2,7 @@ import { addToFavoritesBlog } from "store/features/favoritesBlogsSlice/favorites
 import { useAppDispatch } from "store/hooks";
 import { IBlog } from "types";
 import { getDate } from "utils/getDate";
-import {
-  StyledBlog,
-  Image,
-  Description,
-  Date,
-  Title,
-  Button,
-  HeartIconLike,
-} from "./styles";
+import { StyledBlog, Image, Description, Date, Title, Button, HeartIconLike } from "./styles";
 
 interface IProps {
   blog: IBlog;
@@ -19,7 +11,7 @@ interface IProps {
 export const Blog = ({ blog }: IProps) => {
   const dispatch = useAppDispatch();
   return (
-    <StyledBlog>
+    <StyledBlog initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: false }}>
       <Image src={blog.imageUrl} />
       <Description>
         <Date>{getDate(blog.updatedAt)}</Date>
