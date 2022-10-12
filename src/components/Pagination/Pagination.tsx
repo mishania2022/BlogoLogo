@@ -19,39 +19,44 @@ import {
 
 export const Pagination = () => {
   const dispatch = useAppDispatch();
-  const [requestParams, setRequestParams] = useState({ page: 0, current: 1 });
+  const [requestParams, setRequestParams] = useState({ page: 0, current: 1, sort: "publishedAt" });
 
   const handleFirst = () => {
     setRequestParams({
       page: (requestParams.page = 0),
       current: (requestParams.current = 1),
+      sort:""
     });
   };
 
   const handleLast = () => {
     setRequestParams({
-      page: (requestParams.page = 14496),
-      current: (requestParams.current = 1209),
-    });
-  };
-
-  const handlePrev = () => {
-    setRequestParams({
-      page: requestParams.page === 0 ? 0 : requestParams.page - 12,
-      current: requestParams.current === 1 ? 1 : requestParams.current - 1,
+      page: (requestParams.page = 14515),
+      current: (requestParams.current = 1212),
+      sort:""
     });
   };
 
   const handleNext = () => {
     setRequestParams({
-      page: requestParams.page === 14496 ? 14496 : requestParams.page + 12,
-      current: requestParams.current === 1209 ? 1209 : requestParams.current + 1,
+      page: requestParams.page === 14515 ? 14515 : requestParams.page + 12,
+      current: requestParams.current < 1 ? 1 : requestParams.current + 1,
+      sort:""
     });
   };
+  const handlePrev = () => {
+    setRequestParams({
+      page: requestParams.page === 0 ? 0 : requestParams.page - 12,
+      current: requestParams.current > 1212 ? 1212 : requestParams.current - 1,
+      sort:""
+    });
+  };
+
   const handleNumberCurrent = () => {
     setRequestParams({
       page: requestParams.page,
       current: requestParams.current,
+      sort:""
     });
   };
 
@@ -59,6 +64,7 @@ export const Pagination = () => {
     setRequestParams({
       page: requestParams.page - 24,
       current: requestParams.current - 2,
+      sort:""
     });
   };
 
@@ -66,6 +72,7 @@ export const Pagination = () => {
     setRequestParams({
       page: requestParams.page - 12,
       current: requestParams.current - 1,
+      sort:""
     });
   };
 
@@ -73,6 +80,7 @@ export const Pagination = () => {
     setRequestParams({
       page: requestParams.page + 12,
       current: requestParams.current + 1,
+      sort:""
     });
   };
 
@@ -80,6 +88,7 @@ export const Pagination = () => {
     setRequestParams({
       page: requestParams.page + 24,
       current: requestParams.current + 2,
+      sort:""
     });
   };
 
@@ -101,7 +110,7 @@ export const Pagination = () => {
 
   return (
     <StyledPagination>
-      <ButtonPag onClick={handlePrev}>Prev</ButtonPag>
+      {requestParams.current === 1 ? true : <ButtonPag onClick={handlePrev}>Prev</ButtonPag>}
       <ListPag>
         <FirstPage>
           <Button onClick={handleFirst}>first</Button>
@@ -125,7 +134,7 @@ export const Pagination = () => {
           <Button onClick={handleLast}>last</Button>
         </li>
       </ListPag>
-      <ButtonPag onClick={handleNext}>Next</ButtonPag>
+      {requestParams.current === 1212 ? true : <ButtonPag onClick={handleNext}>Next</ButtonPag>}
     </StyledPagination>
   );
 };

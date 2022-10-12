@@ -3,7 +3,7 @@ import { Color } from "ui/colors";
 import { Media } from "ui/breakepoints";
 import { motion } from "framer-motion";
 
-const StyledAccount = styled(motion.div)`
+const StyledAccount = styled.div`
   margin-top: 80px;
   min-height: 100vh;
 `;
@@ -19,7 +19,7 @@ const Title = styled.h2`
   }
 `;
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: start;

@@ -40,17 +40,17 @@ export const BlogList = () => {
   return (
     <StyledBlogList >
       {sortBlogs.length === 0
-        ? blogs.map((blog: IBlog) => {
+        ? blogs.map((blog: IBlog, index) => {
           return (
             <Link to={`/blogs/${blog.id}`}>
-              <Blog blog={blog} />
+              <Blog blog={blog} custom={index}/>
             </Link>
           );
         })
-        : sortBlogs.map((blog: IBlog) => {
+        : sortBlogs.map((blog: IBlog,index) => {
           return (
             <Link to={`/blogs/${blog.id}`}>
-              <Blog blog={blog} />
+              <Blog blog={blog} custom={index}/>
             </Link>
           );
         })}

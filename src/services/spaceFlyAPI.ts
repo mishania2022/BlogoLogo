@@ -3,13 +3,15 @@ import { IArticle, IBlog } from "../types";
 
 enum Endpoint {
   ARTICLES_COUNT = "articles/count",
-  ARTICLES = "articles",
+  ARTICLES = "articles?_limit=12",
   ARTICLES_ID = "articles/{id}",
   BLOGS_COUNT = "blogs/count",
-  BLOGS = "blogs",
+  BLOGS = "blogs?_limit=12",
   BLOGS_ID = "blogs/{id}",
   ARTICLES_LIMIT = "articles?_limit=12",
   BLOGS_LIMIT = "blogs?_limit=12",
+  ARTICLES_SORT = "articles?_sort=publishedAt&_limit=12",
+  BLOGS_SORT = "blogs?_sort=publishedAt&_limit=12",
 }
 
 class SpaceFlyAPI {
@@ -19,7 +21,37 @@ class SpaceFlyAPI {
   });
 
   public async getAllArticles() {
-    const { data } = await this.ARTICLE_API.get<IArticle[]>(Endpoint.ARTICLES_LIMIT);
+    const { data } = await this.ARTICLE_API.get<IArticle[]>(Endpoint.ARTICLES);
+
+    return data;
+  }
+
+  public async getSortArticles(sort: string | null) {
+    const params = {
+      _sort: sort,
+    };
+    // eslint-disable-next-line max-len
+    const { data } = await this.ARTICLE_API.get<IArticle[]>(Endpoint.ARTICLES, { params });
+
+    return data;
+  }
+
+  public async getArticlesByPage(page: number) {
+    const params = {
+      _start: page,
+    };
+
+    const { data } = await this.ARTICLE_API.get<IArticle[]>(Endpoint.ARTICLES_LIMIT, { params });
+
+    return data;
+  }
+
+  public async getSortArticlesByPage(page: number) {
+    const params = {
+      _start: page,
+    };
+
+    const { data } = await this.ARTICLE_API.get<IArticle[]>(Endpoint.ARTICLES_SORT, { params });
 
     return data;
   }
@@ -40,22 +72,42 @@ class SpaceFlyAPI {
     return data;
   }
 
-  public async getSortArticles(sort: string | null) {
-    const params = {
-      _sort: sort,
-    };
-    // eslint-disable-next-line max-len
-    const { data } = await this.ARTICLE_API.get<IArticle[]>(Endpoint.ARTICLES_LIMIT, { params });
-
-    return data;
-  }
-
   private readonly BLOG_API = axios.create({
     baseURL: this.BASE_URL,
   });
 
   public async getAllBlogs() {
-    const { data } = await this.BLOG_API.get<IBlog[]>(Endpoint.BLOGS_LIMIT);
+    const { data } = await this.BLOG_API.get<IBlog[]>(Endpoint.BLOGS);
+
+    return data;
+  }
+
+  public async getSortBlogs(sort: string | null) {
+    const params = {
+      _sort: sort,
+    };
+    // eslint-disable-next-line max-len
+    const { data } = await this.BLOG_API.get<IBlog[]>(Endpoint.BLOGS, { params });
+
+    return data;
+  }
+
+  public async getSortBlogsByPage(page: number) {
+    const params = {
+      _start: page,
+    };
+
+    const { data } = await this.BLOG_API.get<IBlog[]>(Endpoint.BLOGS_SORT, { params });
+
+    return data;
+  }
+
+  public async getBlogsByPage(page: number) {
+    const params = {
+      _start: page,
+    };
+
+    const { data } = await this.BLOG_API.get<IBlog[]>(Endpoint.BLOGS_LIMIT, { params });
 
     return data;
   }
@@ -69,56 +121,6 @@ class SpaceFlyAPI {
       title_contains: word,
     };
     // eslint-disable-next-line max-len
-    const { data } = await this.BLOG_API.get<IBlog[]>(Endpoint.BLOGS_LIMIT, { params });
-
-    return data;
-  }
-
-  public async getSortBlogs(sort: string | null) {
-    const params = {
-      _sort: sort,
-    };
-    // eslint-disable-next-line max-len
-    const { data } = await this.BLOG_API.get<IBlog[]>(Endpoint.BLOGS_LIMIT, { params });
-
-    return data;
-  }
-
-  public async getArticlesByPage(page: number) {
-    const params = {
-      _start: page,
-    };
-
-    const { data } = await this.ARTICLE_API.get<IArticle[]>(Endpoint.ARTICLES_LIMIT, { params });
-
-    return data;
-  }
-
-  public async getSortArticlesByPage(page: number) {
-    const params = {
-      _start: page,
-    };
-
-    const { data } = await this.ARTICLE_API.get<IArticle[]>(Endpoint.ARTICLES_LIMIT, { params });
-
-    return data;
-  }
-
-  public async getSortBlogsByPage(page: number) {
-    const params = {
-      _start: page,
-    };
-
-    const { data } = await this.BLOG_API.get<IBlog[]>(Endpoint.BLOGS_LIMIT, { params });
-
-    return data;
-  }
-
-  public async getBlogsByPage(page: number) {
-    const params = {
-      _start: page,
-    };
-
     const { data } = await this.BLOG_API.get<IBlog[]>(Endpoint.BLOGS_LIMIT, { params });
 
     return data;

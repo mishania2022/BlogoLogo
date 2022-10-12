@@ -5,7 +5,8 @@ type setCurrent = { current: number };
 
 const StyledPagination = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  column-gap: 15px;
   margin: 40px 15px;
 `;
 
@@ -24,7 +25,7 @@ const ListPag = styled.ul`
 const ButtonPag = styled.button`
   font-size: 16px;
   line-height: 24px;
-  padding: 10px 10px;
+  padding: 5px 5px;
   margin-right: 10px;
   background: ${Color.Light};
   border: none;

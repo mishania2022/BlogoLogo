@@ -38,10 +38,10 @@ export const SearchArticlesList = ({ value }: IProps) => {
     </StyledArticlesList>
   ) : (
     <StyledArticlesList>
-      {searchArticles.map((article: IArticle) => {
+      {searchArticles.map((article: IArticle, index) => {
         return (
           <Link to={`/articles/${article.id}`}>
-            <Article article={article} />
+            <Article article={article} custom={index} />
           </Link>
         );
       })}

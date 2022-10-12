@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Media } from "../../ui/breakepoints";
 import { Color } from "../../ui/colors";
@@ -19,7 +20,7 @@ const StyledFavoritesPage = styled.ul`
   }
 `;
 
-const BlogItem = styled.div`
+const BlogItem = styled(motion.div)`
   max-width: 352px;
   height: 500px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));

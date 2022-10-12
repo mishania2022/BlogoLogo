@@ -38,10 +38,10 @@ export const SearchBlogsList = ({ value }: IProps) => {
     </StyledBlogsList>
   ) : (
     <StyledBlogsList>
-      {searchBlogs.map((blog: IBlog) => {
+      {searchBlogs.map((blog: IBlog, index) => {
         return (
           <Link to={`/blogs/${blog.id}`}>
-            <Blog blog={blog} />
+            <Blog blog={blog} custom={index} />
           </Link>
         );
       })}

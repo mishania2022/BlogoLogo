@@ -15,8 +15,11 @@ import {
   NewsSite,
 } from "./styles";
 import { getDate } from "utils/getDate";
+import { AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
 export const FavoritesArticlesPage = () => {
+  const [isOpen, setIsOpen] = useState(true);
   const dispatch = useAppDispatch();
   const { favoritesArticles } = useAppSelector(getFavoritesArticles);
   return (
@@ -24,22 +27,32 @@ export const FavoritesArticlesPage = () => {
       {favoritesArticles.map((article) => {
         return (
           <Link to={`/articles/${article.id}`}>
-            <ArticleItem>
-              <Description>
-                <NewsSite>NewsSite: {article.newsSite}</NewsSite>
-                <Image src={article.imageUrl} alt={article.title} />
-                <Data>Data: {getDate(article.updatedAt)}</Data>
-                <Title>Title: {article.title}</Title>
-                <Button
-                  onClick={(event) => {
-                    event.preventDefault();
-                    dispatch(removeFavorite(article.id));
-                  }}
+            <AnimatePresence>
+              {isOpen && (
+                <ArticleItem
+                  animate={{ x: 0, y: 0 }}
+                  initial={{ x: -500, y: -500 }}
+                  transition={{ delay: 0.5, duration: 1.3 }}
+                  exit={{ x: -500, y: -500 }}
                 >
-                  <CloseIcon/>
-                </Button>
-              </Description>
-            </ArticleItem>
+                  <Description>
+                    <NewsSite>NewsSite: {article.newsSite}</NewsSite>
+                    <Image src={article.imageUrl} alt={article.title} />
+                    <Data>Data: {getDate(article.updatedAt)}</Data>
+                    <Title>Title: {article.title}</Title>
+                    <Button
+                      onClick={(event) => {
+                        event.preventDefault();
+                        dispatch(removeFavorite(article.id));
+                        // setIsOpen(false);
+                      }}
+                    >
+                      <CloseIcon />
+                    </Button>
+                  </Description>
+                </ArticleItem>
+              )}
+            </AnimatePresence>
           </Link>
         );
       })}

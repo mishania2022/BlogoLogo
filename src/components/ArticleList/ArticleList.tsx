@@ -39,17 +39,17 @@ export const ArticlesList = () => {
   return (
     <StyledArticlesList>
       {sortArticles.length === 0
-        ? articles.map((article: IArticle) => {
+        ? articles.map((article: IArticle, index) => {
           return (
             <Link to={`/articles/${article.id}`}>
-              <Article article={article} />
+              <Article article={article} custom={index}/>
             </Link>
           );
         })
-        : sortArticles.map((article: IArticle) => {
+        : sortArticles.map((article: IArticle,index) => {
           return (
             <Link to={`/articles/${article.id}`}>
-              <Article article={article} />
+              <Article article={article} custom={index} />
             </Link>
           );
         })}

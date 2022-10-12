@@ -6,13 +6,28 @@ import { StyledArticle, Image, Description, Date, Title, Button, HeartIconLike }
 
 interface IProps {
   article: IArticle;
+  custom: number;
 }
+
+const itemVariants = {
+  visible: () => ({
+    opacity: 1,
+    x: 0,
+    y: 0,
+    scale: 1,
+    transition: {
+      delay: 0.1,
+      duration: 1.3,
+    },
+  }),
+  hidden: { opacity: 0, scale: 0 },
+};
 
 export const Article = ({ article }: IProps) => {
   const dispatch = useAppDispatch();
 
   return (
-    <StyledArticle initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: false }}>
+    <StyledArticle variants={itemVariants} initial="hidden" animate="visible">
       <Image src={article.imageUrl} alt="image" />
       <Description>
         <Date>{getDate(article.updatedAt)}</Date>

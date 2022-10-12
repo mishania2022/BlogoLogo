@@ -16,15 +16,30 @@ import {
 } from "./styles";
 import { getDate } from "utils/getDate";
 
+const itemVariants = {
+  visible: () => ({
+    opacity: 1,
+    x: 0,
+    y: 0,
+    scale: 1,
+    transition: {
+      delay: 0.1,
+      duration: 1.3,
+    },
+  }),
+  hidden: { opacity: 0, x: 200, y: -300, scale: 1.4 },
+};
+
+
 export const FavoritesBlogsPage = () => {
   const dispatch = useAppDispatch();
   const { favoritesBlogs } = useAppSelector(getFavoritesBlogs);
   return (
     <StyledFavoritesPage>
-      {favoritesBlogs.map((blog) => {
+      {favoritesBlogs.map((blog, index) => {
         return (
           <Link to={`/blogs/${blog.id}`}>
-            <BlogItem>
+            <BlogItem variants={itemVariants} initial="hidden" animate="visible" custom={index}>
               <Description>
                 <NewsSite>NewsSite: {blog.newsSite}</NewsSite>
                 <Image src={blog.imageUrl} alt={blog.title} />

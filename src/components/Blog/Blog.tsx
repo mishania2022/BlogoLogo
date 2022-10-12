@@ -6,12 +6,27 @@ import { StyledBlog, Image, Description, Date, Title, Button, HeartIconLike } fr
 
 interface IProps {
   blog: IBlog;
+  custom: number;
 }
+
+const itemVariants = {
+  visible: () => ({
+    opacity: 1,
+    x: 0,
+    y: 0,
+    scale: 1,
+    transition: {
+      delay: 0.1,
+      duration: 1.3,
+    },
+  }),
+  hidden: { opacity: 0, scale: 0 },
+};
 
 export const Blog = ({ blog }: IProps) => {
   const dispatch = useAppDispatch();
   return (
-    <StyledBlog initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: false }}>
+    <StyledBlog variants={itemVariants} initial="hidden" animate="visible">
       <Image src={blog.imageUrl} />
       <Description>
         <Date>{getDate(blog.updatedAt)}</Date>
