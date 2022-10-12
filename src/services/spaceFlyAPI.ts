@@ -21,7 +21,7 @@ class SpaceFlyAPI {
   });
 
   public async getAllArticles() {
-    const { data } = await this.ARTICLE_API.get<IArticle[]>(Endpoint.ARTICLES);
+    const { data } = await this.ARTICLE_API.get<IArticle[]>(Endpoint.ARTICLES_SORT);
 
     return data;
   }
