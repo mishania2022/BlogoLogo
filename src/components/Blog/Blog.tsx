@@ -1,5 +1,6 @@
 import { addToFavoritesBlog } from "store/features/favoritesBlogsSlice/favoritesBlogsSlice";
-import { useAppDispatch } from "store/hooks";
+import { useAppDispatch, useAppSelector } from "store/hooks";
+import { getUserInfo } from "store/selectors/userSelectors";
 import { IBlog } from "types";
 import { getDate } from "utils/getDate";
 import { StyledBlog, Image, Description, Date, Title, Button, HeartIconLike } from "./styles";
@@ -25,20 +26,24 @@ const itemVariants = {
 
 export const Blog = ({ blog }: IProps) => {
   const dispatch = useAppDispatch();
+  const { isAuth } = useAppSelector(getUserInfo);
+
   return (
     <StyledBlog variants={itemVariants} initial="hidden" animate="visible">
       <Image src={blog.imageUrl} />
       <Description>
         <Date>{getDate(blog.updatedAt)}</Date>
         <Title>{blog.title}</Title>
-        <Button
-          onClick={(event) => {
-            event.preventDefault();
-            dispatch(addToFavoritesBlog(blog));
-          }}
-        >
-          <HeartIconLike />
-        </Button>
+        {isAuth && (
+          <Button
+            onClick={(event) => {
+              event.preventDefault();
+              dispatch(addToFavoritesBlog(blog));
+            }}
+          >
+            <HeartIconLike />
+          </Button>
+        )}
       </Description>
     </StyledBlog>
   );

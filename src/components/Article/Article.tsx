@@ -1,5 +1,6 @@
 import { addToFavorites } from "store/features/favoritesArticlesSlice/favoritesArticlesSlice";
-import { useAppDispatch } from "store/hooks";
+import { useAppDispatch, useAppSelector } from "store/hooks";
+import { getUserInfo } from "store/selectors/userSelectors";
 import { IArticle } from "types";
 import { getDate } from "utils/getDate";
 import { StyledArticle, Image, Description, Date, Title, Button, HeartIconLike } from "./styles";
@@ -25,6 +26,7 @@ const itemVariants = {
 
 export const Article = ({ article }: IProps) => {
   const dispatch = useAppDispatch();
+  const { isAuth } = useAppSelector(getUserInfo);
 
   return (
     <StyledArticle variants={itemVariants} initial="hidden" animate="visible">
@@ -32,14 +34,16 @@ export const Article = ({ article }: IProps) => {
       <Description>
         <Date>{getDate(article.updatedAt)}</Date>
         <Title>{article.title}</Title>
-        <Button
-          onClick={(event) => {
-            event.preventDefault();
-            dispatch(addToFavorites(article));
-          }}
-        >
-          <HeartIconLike />
-        </Button>
+        {isAuth && (
+          <Button
+            onClick={(event) => {
+              event.preventDefault();
+              dispatch(addToFavorites(article));
+            }}
+          >
+            <HeartIconLike />
+          </Button>
+        )}
       </Description>
     </StyledArticle>
   );
