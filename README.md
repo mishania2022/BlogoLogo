@@ -26,6 +26,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>    
+    <li><a href="#usage">Contact</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -64,7 +65,23 @@ Just install the project to see how it works.
    ```sh
    npm install
    ```
+## Usage
 
+You can see the first 12 articles or blogs.
+
+<img src="images/homePage.png" alt="Home Page">
+
+Нou can read the article in detail
+
+<img src="images/details.png" alt="Details Page">
+
+Your favorite articles and blocks
+
+<img src="images/favorites.png" alt="Favorites Page">
+
+Articles search
+
+<img src="images/search.png" alt="Favorites Page">
 
 
 ## Contact
